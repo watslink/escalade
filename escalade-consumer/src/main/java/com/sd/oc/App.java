@@ -19,11 +19,11 @@ public class App
 
         ApplicationContext context= new AnnotationConfigApplicationContext(ConfigurationDAO.class);
 
-//        Longueur longeurnew= new Longueur("lala","3c", 1,40,1);
+        Longueur longeurnew= new Longueur("ahahah","3c", 1,40,1);
 
         LongueurDAO longueurDAO=context.getBean(LongueurDAO.class);
 
-//        longueurDAO.create(longeurnew);
+        longueurDAO.create(longeurnew);
 
         Longueur longueur=longueurDAO.find(1);
 

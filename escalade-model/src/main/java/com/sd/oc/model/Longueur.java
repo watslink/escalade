@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Longueur {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int longueur_id;
 
     @Column(nullable = false)
