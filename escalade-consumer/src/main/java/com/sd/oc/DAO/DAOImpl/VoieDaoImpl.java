@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 
 @Repository
@@ -24,6 +25,7 @@ public class VoieDaoImpl implements VoieDAO {
     }
 
     @Override
+    @Transactional
     public void create(Voie voie) {
         entityManager.persist(voie);
     }
