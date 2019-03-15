@@ -2,6 +2,8 @@ package com.sd.oc.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,10 +28,17 @@ public class Utilisateur {
     @Column(nullable = false)
     private String mot_de_passe;
 
-    @OneToMany(mappedBy ="utilisateur", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy ="utilisateur")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Commentaire> listCommentaire;
 
+    @OneToMany(mappedBy ="utilisateurProprietaire")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<TopoAPreter> listTopoAPreter;
 
+    @OneToMany(mappedBy ="utilisateurEmprunteur")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<TopoAPreter> listToposEmprunter;
 
     public Utilisateur(String pseudo, String mail, String mot_de_passe) {
         this.pseudo = pseudo;
