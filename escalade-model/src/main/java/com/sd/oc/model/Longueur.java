@@ -1,11 +1,18 @@
 package com.sd.oc.model;
 
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name= "longueur")
+@Getter
+@Setter
 public class Longueur {
 
     @Id
@@ -35,53 +42,6 @@ public class Longueur {
     public Longueur(){
     }
 
-    public int getLongueur_id() {
-        return longueur_id;
-    }
-
-    public void setLongueur_id(int longueur_id) {
-        this.longueur_id = longueur_id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCotation() {
-        return cotation;
-    }
-
-    public void setCotation(String cotation) {
-        this.cotation = cotation;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public int getNombre_points() {
-        return nombre_points;
-    }
-
-    public void setNombre_points(int nombre_points) {
-        this.nombre_points = nombre_points;
-    }
-
-    public Voie getVoie() {
-        return voie;
-    }
-
-    public void setVoie(Voie voie) {
-        this.voie = voie;
-    }
 
     @Override
     public boolean equals(Object o) {

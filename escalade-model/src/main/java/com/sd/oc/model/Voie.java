@@ -1,12 +1,18 @@
 package com.sd.oc.model;
 
 
+
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name="voie")
+@Getter
+@Setter
 public class Voie {
 
     @Id
@@ -31,37 +37,6 @@ public class Voie {
     public Voie() {
     }
 
-    public int getVoie_id() {
-        return voie_id;
-    }
-
-    public void setVoie_id(int voie_id) {
-        this.voie_id = voie_id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public int getSecteur_id() {
-        return secteur_id;
-    }
-
-    public void setSecteur_id(int secteur_id) {
-        this.secteur_id = secteur_id;
-    }
-
-    public List<Longueur> getListLongueur() {
-        return listLongueur;
-    }
-
-    public void setListLongueur(List<Longueur> listLongueur) {
-        this.listLongueur = listLongueur;
-    }
 
     @Override
     public boolean equals(Object o) {
