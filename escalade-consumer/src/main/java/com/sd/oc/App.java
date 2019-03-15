@@ -2,7 +2,9 @@ package com.sd.oc;
 
 import com.sd.oc.DAO.ConfigurationDAO;
 import com.sd.oc.DAO.DAOInterface.LongueurDAO;
+import com.sd.oc.DAO.DAOInterface.VoieDAO;
 import com.sd.oc.model.Longueur;
+import com.sd.oc.model.Voie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,14 +21,14 @@ public class App
 
         ApplicationContext context= new AnnotationConfigApplicationContext(ConfigurationDAO.class);
 
-        Longueur longeurnew= new Longueur("ahahah","3c", 1,40,1);
 
-        LongueurDAO longueurDAO=context.getBean(LongueurDAO.class);
 
-        longueurDAO.create(longeurnew);
+        VoieDAO voieDAO=context.getBean(VoieDAO.class);
 
-        Longueur longueur=longueurDAO.find(1);
+       Voie voie= voieDAO.find(8);
 
-        System.out.println(longueur.getDescription());
+
+
+        System.out.println(voie.getListLongueur().get(1).getDescription());
     }
 }

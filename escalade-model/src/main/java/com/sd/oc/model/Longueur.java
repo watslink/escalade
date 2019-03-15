@@ -20,20 +20,19 @@ public class Longueur {
     private int numero;
     @Column(nullable = false)
     private int nombre_points;
-    @Column(nullable = false)
-    private int voie_id;
+    @ManyToOne
+    @JoinColumn(name="voie_id")
+    private Voie voie;
 
-    public Longueur(String description, String cotation, int numero, int nombre_points, int voie_id) {
-        super();
+    public Longueur(String description, String cotation, int numero, int nombre_points, Voie voie) {
         this.description = description;
         this.cotation = cotation;
         this.numero = numero;
         this.nombre_points = nombre_points;
-        this.voie_id=voie_id;
+        this.voie=voie;
     }
 
     public Longueur(){
-        super();
     }
 
     public int getLongueur_id() {
@@ -76,12 +75,12 @@ public class Longueur {
         this.nombre_points = nombre_points;
     }
 
-    public int getVoie_id() {
-        return voie_id;
+    public Voie getVoie() {
+        return voie;
     }
 
-    public void setVoie_id(int voie_id) {
-        this.voie_id = voie_id;
+    public void setVoie(Voie voie) {
+        this.voie = voie;
     }
 
     @Override

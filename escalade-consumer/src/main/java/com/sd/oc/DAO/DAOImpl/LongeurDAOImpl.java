@@ -28,4 +28,14 @@ public class LongeurDAOImpl implements LongueurDAO {
     public void create(Longueur longueur) {
         entityManager.persist(longueur);
     }
+
+    @Override
+    public void update(Longueur longueur) {
+
+    }
+
+    @Override
+    public void delete(Longueur longueur) {
+
+    }
 }

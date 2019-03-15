@@ -6,4 +6,6 @@ public interface LongueurDAO {
 
     Longueur find (int id);
     void create (Longueur longueur);
+    void update (Longueur longueur);
+    void delete (Longueur longueur);
 }
