@@ -2,11 +2,13 @@ package com.sd.oc.DAO.DAOImpl;
 
 import com.sd.oc.DAO.DAOInterface.SiteDAO;
 import com.sd.oc.model.Site;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+@Repository
 public class SiteDAOImpl implements SiteDAO {
 
     @PersistenceContext

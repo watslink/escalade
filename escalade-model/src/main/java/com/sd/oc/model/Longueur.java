@@ -7,6 +7,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -30,6 +31,10 @@ public class Longueur {
     @ManyToOne
     @JoinColumn(name="voie_id")
     private Voie voie;
+
+    @OneToMany(mappedBy ="longueur", fetch = FetchType.EAGER)
+    private List<Commentaire> listCommentaire;
+
 
     public Longueur(String description, String cotation, int numero, int nombre_points, Voie voie) {
         this.description = description;
