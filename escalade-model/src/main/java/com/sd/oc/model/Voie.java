@@ -17,21 +17,21 @@ public class Voie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private int voie_id;
 
     @Column(nullable = false)
     private String nom;
 
-    @Column(nullable=false)
-    private int secteur_id;
+    @ManyToOne
+    @JoinColumn(name="secteur_id")
+    private Secteur secteur;
 
     @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER)
     private List<Longueur> listLongueur;
 
-    public Voie(String nom, int secteur_id) {
+    public Voie(String nom, Secteur secteur) {
         this.nom = nom;
-        this.secteur_id = secteur_id;
+        this.secteur = secteur;
     }
 
     public Voie() {
