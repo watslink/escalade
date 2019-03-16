@@ -18,9 +18,7 @@ public class LongeurDAOImpl implements LongueurDAO {
 
     @Override
     public Longueur find(int id) {
-
         return entityManager.find(Longueur.class, id);
-
     }
 
     @Override
