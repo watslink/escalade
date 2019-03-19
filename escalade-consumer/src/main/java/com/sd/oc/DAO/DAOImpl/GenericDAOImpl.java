@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-;
+
 
 public abstract class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 
