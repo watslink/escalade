@@ -28,11 +28,11 @@ public class Utilisateur {
     @Column(nullable = false)
     private String mot_de_passe;
 
-    @OneToMany(mappedBy ="utilisateur")
+    @OneToMany(mappedBy ="utilisateur", cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Commentaire> listCommentaire;
 
-    @OneToMany(mappedBy ="utilisateurProprietaire")
+    @OneToMany(mappedBy ="utilisateurProprietaire", cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<TopoAPreter> listTopoAPreter;
 

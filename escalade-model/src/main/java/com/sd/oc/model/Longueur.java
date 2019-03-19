@@ -32,7 +32,7 @@ public class Longueur {
     @JoinColumn(name="voie_id")
     private Voie voie;
 
-    @OneToMany(mappedBy ="longueur", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy ="longueur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Commentaire> listCommentaire;
 
 

@@ -2,10 +2,7 @@ package com.sd.oc.DAO.DAOInterface;
 
 import com.sd.oc.model.Site;
 
-public interface SiteDAO {
+public interface SiteDAO extends GenericDAO<Site>{
 
-    Site find (int id);
-    void create (Site site);
-    void update (Site site);
-    void delete (Site site);
+
 }

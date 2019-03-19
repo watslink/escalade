@@ -4,34 +4,7 @@ import com.sd.oc.DAO.DAOInterface.SiteDAO;
 import com.sd.oc.model.Site;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
-
 @Repository
-public class SiteDAOImpl implements SiteDAO {
+public class SiteDAOImpl extends GenericDAOImpl<Site> implements SiteDAO {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    @Override
-    public Site find(int id) {
-        return entityManager.find(Site.class, id);
-    }
-
-    @Override
-    @Transactional
-    public void create(Site site) {
-        entityManager.persist(site);
-    }
-
-    @Override
-    public void update(Site site) {
-
-    }
-
-    @Override
-    public void delete(Site site) {
-
-    }
 }

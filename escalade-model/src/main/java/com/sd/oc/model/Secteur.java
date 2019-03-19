@@ -26,7 +26,7 @@ public class Secteur {
     @JoinColumn(name="site_id")
     private Site site;
 
-    @OneToMany(mappedBy ="secteur", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy ="secteur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Voie> listVoie;
 
     public Secteur(String nom, Site site) {

@@ -2,10 +2,7 @@ package com.sd.oc.DAO.DAOInterface;
 
 import com.sd.oc.model.Longueur;
 
-public interface LongueurDAO {
+public interface LongueurDAO extends GenericDAO<Longueur>{
 
-    Longueur find (int id);
-    void create (Longueur longueur);
-    void update (Longueur longueur);
-    void delete (Longueur longueur);
+
 }

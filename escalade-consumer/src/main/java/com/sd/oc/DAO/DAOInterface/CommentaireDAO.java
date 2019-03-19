@@ -2,10 +2,6 @@ package com.sd.oc.DAO.DAOInterface;
 
 import com.sd.oc.model.Commentaire;
 
-public interface CommentaireDAO {
+public interface CommentaireDAO extends GenericDAO<Commentaire> {
 
-    Commentaire find (int id);
-    void create (Commentaire commentaire);
-    void update (Commentaire commentaire);
-    void delete (Commentaire commentaire);
 }

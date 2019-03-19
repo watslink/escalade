@@ -2,10 +2,7 @@ package com.sd.oc.DAO.DAOInterface;
 
 import com.sd.oc.model.Utilisateur;
 
-public interface UtilisateurDAO {
+public interface UtilisateurDAO extends GenericDAO<Utilisateur> {
 
-    Utilisateur find (int id);
-    void create (Utilisateur utilisateur);
-    void update (Utilisateur utilisateur);
-    void delete (Utilisateur utilisateur);
+
 }

@@ -2,10 +2,6 @@ package com.sd.oc.DAO.DAOInterface;
 
 import com.sd.oc.model.Secteur;
 
-public interface SecteurDAO {
+public interface SecteurDAO extends GenericDAO<Secteur>{
 
-    Secteur find (int id);
-    void create (Secteur secteur);
-    void update (Secteur secteur);
-    void delete (Secteur secteur);
 }
