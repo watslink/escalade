@@ -22,9 +22,8 @@ public abstract class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
     }
 
     @Override
-    public T create(final T t) {
+    public void create(final T t) {
         this.em.persist(t);
-        return t;
     }
 
     @Override
@@ -38,7 +37,7 @@ public abstract class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
     }
 
     @Override
-    public T update(final T t) {
-        return this.em.merge(t);
+    public void update(final T t) {
+         this.em.merge(t);
     }
 }
