@@ -15,16 +15,16 @@ public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
 
     @Override
     public void add(T entity) {
-
+        genericDAO.create(entity);
     }
 
     @Override
     public void update(T entity) {
-
+        genericDAO.update(entity);
     }
 
     @Override
-    public void remove(T entity) {
-
+    public void remove(K id) {
+        genericDAO.delete(id);
     }
 }
