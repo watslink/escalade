@@ -5,7 +5,7 @@ import com.sd.oc.model.Secteur;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class SecteurDAOImpl extends GenericDAOImpl<Secteur> implements SecteurDAO {
+public class SecteurDAOImpl extends GenericDAOImpl<Secteur, Integer> implements SecteurDAO {
 
 
 }

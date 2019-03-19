@@ -5,6 +5,6 @@ import com.sd.oc.model.Longueur;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LongeurDAOImpl extends GenericDAOImpl<Longueur> implements LongueurDAO {
+public class LongeurDAOImpl extends GenericDAOImpl<Longueur, Integer> implements LongueurDAO {
 
 }

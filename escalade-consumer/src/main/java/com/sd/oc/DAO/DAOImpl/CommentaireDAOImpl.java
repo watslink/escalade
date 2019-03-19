@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public class CommentaireDAOImpl extends GenericDAOImpl<Commentaire> implements CommentaireDAO {
+public class CommentaireDAOImpl extends GenericDAOImpl<Commentaire, Integer> implements CommentaireDAO {
 
 }

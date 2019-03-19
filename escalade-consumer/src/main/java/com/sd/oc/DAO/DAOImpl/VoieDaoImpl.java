@@ -5,6 +5,6 @@ import com.sd.oc.model.Voie;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class VoieDaoImpl extends GenericDAOImpl<Voie> implements VoieDAO {
+public class VoieDaoImpl extends GenericDAOImpl<Voie, Integer> implements VoieDAO {
 
 }

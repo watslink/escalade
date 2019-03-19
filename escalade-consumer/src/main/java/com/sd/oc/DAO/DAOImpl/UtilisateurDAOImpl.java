@@ -5,7 +5,7 @@ import com.sd.oc.model.Utilisateur;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UtilisateurDAOImpl extends GenericDAOImpl<Utilisateur> implements UtilisateurDAO {
+public class UtilisateurDAOImpl extends GenericDAOImpl<Utilisateur, Integer> implements UtilisateurDAO {
 
 
 }

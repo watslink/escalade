@@ -4,12 +4,11 @@ import com.sd.oc.DAO.DAOInterface.GenericDAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.Map;
+;
 
-public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
+public abstract class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
 
     @PersistenceContext
     protected EntityManager em;
@@ -29,12 +28,12 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
     }
 
     @Override
-    public void delete(final Object id) {
+    public void delete(final K id) {
         this.em.remove(this.em.getReference(type, id));
     }
 
     @Override
-    public T find(final Object id) {
+    public T find(final K id) {
         return (T) this.em.find(type, id);
     }
 

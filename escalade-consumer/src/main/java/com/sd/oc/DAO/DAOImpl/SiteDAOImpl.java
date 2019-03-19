@@ -5,6 +5,6 @@ import com.sd.oc.model.Site;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class SiteDAOImpl extends GenericDAOImpl<Site> implements SiteDAO {
+public class SiteDAOImpl extends GenericDAOImpl<Site, Integer> implements SiteDAO {
 
 }
