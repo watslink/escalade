@@ -1,6 +1,7 @@
 package com.sd.oc.DAO.DAOInterface;
 
-import java.util.Map;
+
+import java.util.List;
 
 public interface GenericDAO<T, K> {
 
@@ -12,4 +13,6 @@ public interface GenericDAO<T, K> {
     T find(K id);
 
     void update(T t);
+
+    List<T> findAll();
 }

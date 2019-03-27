@@ -1,10 +1,14 @@
 package com.sd.oc;
 
 import com.sd.oc.DAO.ConfigurationDAO;
+import com.sd.oc.DAO.DAOInterface.SecteurDAO;
 import com.sd.oc.DAO.DAOInterface.TopoDAO;
+import com.sd.oc.model.Secteur;
 import com.sd.oc.model.Topo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.List;
 
 /**
  * Hello world!
@@ -21,12 +25,14 @@ public class App
 
 
 
-        TopoDAO topoDAO=context.getBean(TopoDAO.class);
+        SecteurDAO secteurDAO=context.getBean(SecteurDAO.class);
 
-        Topo topo=topoDAO.find(7);
+        List<Secteur> listSecteur=secteurDAO.findAll();
 
 
+        for (Secteur secteur :listSecteur) {
+            System.out.println(secteur.getNom());
+        }
 
-        System.out.println(topo.getDescription());
     }
 }
