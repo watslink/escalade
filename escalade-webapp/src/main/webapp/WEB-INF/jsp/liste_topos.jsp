@@ -21,7 +21,7 @@
             <tr>
                 <td>${topo.nom}</td>
                 <td>${topo.description}</td>
-                <td><a href="/escaladewebapp/detail_topo?topo_id=${topo.topo_id}" class="btn btn-primary">Détails</a> </td>
+                <td><a href="${pageContext.request.contextPath}/detail_topo?topo_id=${topo.topo_id}" class="btn btn-primary">Détails</a> </td>
             </tr>
         </c:forEach>
         </tbody>

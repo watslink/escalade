@@ -4,8 +4,8 @@
     </div>
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/escaladewebapp/">Accueil</a></li>
-            <li><a href="/escaladewebapp/liste_topos">Liste</a></li>
+            <li class="active"><a href="${pageContext.request.contextPath}/">Accueil</a></li>
+            <li><a href="${pageContext.request.contextPath}/liste_topos">Liste</a></li>
 
         </ul>
     </div>
