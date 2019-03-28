@@ -3,6 +3,6 @@
 <%@include file="include/header.jsp"%>
 <body>
 <%@include file="include/menu.jsp"%>
-<h2>Hello World!</h2>
+<h1> Liste des topos existants:</h1>
 </body>
 </html>
