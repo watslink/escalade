@@ -1,0 +1,13 @@
+package com.sd.oc.webapp.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+
+    @RequestMapping("/")
+    public String pageAccueil(){
+        return "index";
+    }
+}
