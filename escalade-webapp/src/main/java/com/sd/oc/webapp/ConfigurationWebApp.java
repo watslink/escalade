@@ -1,8 +1,10 @@
 package com.sd.oc.webapp;
 
+import com.sd.oc.Service.ConfigurationService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.sd.oc.webapp")
+@Import(ConfigurationService.class)
 public class ConfigurationWebApp implements WebMvcConfigurer {
 
     /**

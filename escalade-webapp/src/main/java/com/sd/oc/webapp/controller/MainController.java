@@ -23,7 +23,7 @@ public class MainController {
     @RequestMapping(value="/liste_topos", method= RequestMethod.GET)
     public String liste_topos(Model model){
 
-
+        model.addAttribute("liste_topos", topoService.findAll());
         return "liste_topos";
     }
 }
