@@ -4,6 +4,8 @@ import com.sd.oc.DAO.DAOInterface.GenericDAO;
 import com.sd.oc.Service.ServiceInterface.GenericService;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
 
 
@@ -31,5 +33,10 @@ public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
     @Transactional
     public void remove(K id) {
         genericDAO.delete(id);
+    }
+
+    @Override
+    public List<T> findAll() {
+       return genericDAO.findAll();
     }
 }

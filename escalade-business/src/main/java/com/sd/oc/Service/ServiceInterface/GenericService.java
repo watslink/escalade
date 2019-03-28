@@ -7,5 +7,6 @@ public interface GenericService<T, K> {
     public void add(T entity);
     public void update(T entity);
     public void remove(K id);
+    public List<T> findAll();
 
 }
