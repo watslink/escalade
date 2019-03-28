@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="topo")
@@ -27,7 +28,7 @@ public class Topo {
     @JoinTable(name="topo_sites",
             joinColumns={@JoinColumn(name="topo_id")},
             inverseJoinColumns={@JoinColumn(name="site_id")})
-    private List<Site> listSite;
+    private Set<Site> listSite;
 
     public Topo(String nom, String description) {
         this.nom = nom;

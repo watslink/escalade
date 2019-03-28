@@ -9,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name= "longueur")
@@ -33,7 +34,7 @@ public class Longueur {
     private Voie voie;
 
     @OneToMany(mappedBy ="longueur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Commentaire> listCommentaire;
+    private Set<Commentaire> listCommentaire;
 
 
     public Longueur(String description, String cotation, int numero, int nombre_points, Voie voie) {

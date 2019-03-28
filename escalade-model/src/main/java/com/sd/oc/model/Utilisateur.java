@@ -8,6 +8,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name= "utilisateur")
@@ -30,15 +31,15 @@ public class Utilisateur {
 
     @OneToMany(mappedBy ="utilisateur", cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Commentaire> listCommentaire;
+    private Set<Commentaire> listCommentaire;
 
     @OneToMany(mappedBy ="utilisateurProprietaire", cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<TopoAPreter> listTopoAPreter;
+    private Set<TopoAPreter> listTopoAPreter;
 
     @OneToMany(mappedBy ="utilisateurEmprunteur")
     @LazyCollection(LazyCollectionOption.FALSE)
-    private List<TopoAPreter> listToposEmprunter;
+    private Set<TopoAPreter> listToposEmprunter;
 
     public Utilisateur(String pseudo, String mail, String mot_de_passe) {
         this.pseudo = pseudo;

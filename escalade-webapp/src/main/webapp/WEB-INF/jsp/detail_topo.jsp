@@ -5,23 +5,27 @@
 <%@include file="include/head.jsp"%>
 <body>
 <%@include file="include/menu.jsp"%>
-<h1> Liste des topos existants:</h1>
+
+    <h3>Topo: ${topo.nom}</h3>
+    <h4>Description: ${topo.description}</h4>
+
+    <h3>Listes des sites :</h3>
 <div class="container">
     <table class="table table-striped">
         <thead>
         <tr>
             <th>Nom</th>
-            <th>Description</th>
-            <th>Détails</th>
+            <th>Département</th>
+            <th>Ville</th>
         </tr>
         </thead>
 
         <tbody>
-        <c:forEach items="${liste_topos}" var="topo">
+        <c:forEach items="${topo.listSite}" var="site">
             <tr>
-                <td>${topo.nom}</td>
-                <td>${topo.description}</td>
-                <td><a href="/escaladewebapp/detail_topo?topo_id=${topo.topo_id}" class="btn btn-primary">Détails</a> </td>
+                <td>${site.nom}</td>
+                <td>${site.departement}</td>
+                <td>${site.ville}</td>
             </tr>
         </c:forEach>
         </tbody>

@@ -36,7 +36,7 @@ public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
     }
 
     @Override
-    public List<T> findAll() {
+    public List<T> getAll() {
        return genericDAO.findAll();
     }
 }

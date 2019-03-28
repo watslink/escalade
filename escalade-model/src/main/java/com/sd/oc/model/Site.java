@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="site")
@@ -29,7 +30,7 @@ public class Site {
     private String ville;
 
     @OneToMany(mappedBy ="site", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Secteur> listSecteur;
+    private Set<Secteur> listSecteur;
 
     public Site(String nom, Integer departement, String ville) {
         this.nom = nom;

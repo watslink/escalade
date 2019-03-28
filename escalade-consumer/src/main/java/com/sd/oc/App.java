@@ -5,10 +5,12 @@ import com.sd.oc.DAO.DAOInterface.SecteurDAO;
 import com.sd.oc.DAO.DAOInterface.TopoDAO;
 import com.sd.oc.model.Secteur;
 import com.sd.oc.model.Topo;
+import com.sd.oc.model.Voie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Hello world!
@@ -27,12 +29,15 @@ public class App
 
         SecteurDAO secteurDAO=context.getBean(SecteurDAO.class);
 
-        List<Secteur> listSecteur=secteurDAO.findAll();
+        Secteur secteur=secteurDAO.find(2);
 
+        Set<Voie> listVoie=secteur.getListVoie();
+        System.out.println(listVoie);
 
-        for (Secteur secteur :listSecteur) {
-            System.out.println(secteur.getNom());
-        }
+            for (Voie voie: secteur.getListVoie()) {
+                System.out.println(voie.getNom());
+            }
+
 
     }
 }

@@ -4,10 +4,14 @@ package com.sd.oc.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="secteur")
@@ -27,11 +31,12 @@ public class Secteur {
     private Site site;
 
     @OneToMany(mappedBy ="secteur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Voie> listVoie;
+    private Set<Voie> listVoie;
 
-    public Secteur(String nom, Site site) {
+    public Secteur(String nom, Site site, Set<Voie> listVoie) {
         this.nom = nom;
         this.site = site;
+        this.listVoie=listVoie;
     }
 
     public Secteur() {
