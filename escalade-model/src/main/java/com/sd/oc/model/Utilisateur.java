@@ -1,9 +1,11 @@
 package com.sd.oc.model;
 
+import com.sd.oc.utils.BCryptManagerUtil;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class Utilisateur {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,12 +53,16 @@ public class Utilisateur {
     public Utilisateur(String pseudo, String mail, String mot_de_passe) {
         this.pseudo = pseudo;
         this.mail = mail;
-        this.mot_de_passe = mot_de_passe;
+        this.mot_de_passe = BCryptManagerUtil.passwordencoder().encode(mot_de_passe);
         this.enabled=1;
         this.role="USER";
     }
 
     public Utilisateur() {
+    }
+
+    public void setMot_de_passe(String mot_de_passe) {
+        this.mot_de_passe = BCryptManagerUtil.passwordencoder().encode(mot_de_passe);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.sd.oc.DAO.DAOImpl;
 
 import com.sd.oc.DAO.DAOInterface.GenericDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,11 +29,13 @@ public abstract class GenericDAOImpl<T, K>  implements GenericDAO<T, K> {
     }
 
     @Override
+    @Transactional
     public void create(final T t) {
         this.em.persist(t);
     }
 
     @Override
+    @Transactional
     public void delete(final K id) {
         this.em.remove(this.em.getReference(type, id));
     }
@@ -43,6 +46,7 @@ public abstract class GenericDAOImpl<T, K>  implements GenericDAO<T, K> {
     }
 
     @Override
+    @Transactional
     public void update(final T t) {
          this.em.merge(t);
     }
