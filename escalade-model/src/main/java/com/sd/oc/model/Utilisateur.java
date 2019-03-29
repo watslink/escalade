@@ -29,6 +29,12 @@ public class Utilisateur {
     @Column(nullable = false)
     private String mot_de_passe;
 
+    @Column
+    private int enabled;
+
+    @Column
+    private String role;
+
     @OneToMany(mappedBy ="utilisateur", cascade = CascadeType.ALL)
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Commentaire> listCommentaire;
@@ -45,6 +51,8 @@ public class Utilisateur {
         this.pseudo = pseudo;
         this.mail = mail;
         this.mot_de_passe = mot_de_passe;
+        this.enabled=1;
+        this.role="USER";
     }
 
     public Utilisateur() {

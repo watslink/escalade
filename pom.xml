@@ -23,6 +23,7 @@
     <module>escalade-business</module>
     <module>escalade-consumer</module>
     <module>escalade-webapp</module>
+    <module>escalade-utils</module>
   </modules>
 
 
@@ -124,6 +125,25 @@
         <artifactId>jquery</artifactId>
         <version>3.3.1-2</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>5.1.2.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>5.1.2.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-crypto</artifactId>
+        <version>5.1.4.RELEASE</version>
+      </dependency>
+
 
 
     </dependencies>
