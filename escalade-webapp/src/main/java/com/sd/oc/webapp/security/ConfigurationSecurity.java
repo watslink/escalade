@@ -32,16 +32,16 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
                         "select pseudo, role from utilisateur where pseudo=?");
     }
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-//        builder.jdbcAuthentication()
-//                .passwordEncoder(new BCryptPasswordEncoder())
-//                .dataSource(dataSource);
-//    }
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().antMatchers("/login").permitAll()
-//                .antMatchers("/**").hasAnyRole().and()
-//                .formLogin();
-//    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/login").anonymous()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and().csrf().disable();
+    }
 }

@@ -2,6 +2,7 @@ package com.sd.oc;
 
 import com.sd.oc.Service.ConfigurationService;
 import com.sd.oc.Service.ServiceInterface.TopoService;
+import com.sd.oc.Service.ServiceInterface.UtilisateurService;
 import com.sd.oc.model.Topo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,12 +19,12 @@ public class App
 
         ApplicationContext context= new AnnotationConfigApplicationContext(ConfigurationService.class);
 
-        TopoService topoService=context.getBean(TopoService.class);
-
-        Topo topo=topoService.get(7);
+        UtilisateurService utilisateurService=context.getBean(UtilisateurService.class);
 
 
+        ;
 
-        System.out.println(topo.getDescription());
+
+        System.out.println(utilisateurService.getByPseudo("Robert").getMail());
     }
 }

@@ -41,7 +41,7 @@ public abstract class GenericDAOImpl<T, K>  implements GenericDAO<T, K> {
     }
 
     @Override
-    public T find(final K id) {
+    public T findById(final K id) {
         return (T) this.em.find(type, id);
     }
 

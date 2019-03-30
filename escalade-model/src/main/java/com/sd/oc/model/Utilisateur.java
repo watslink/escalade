@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.NaturalId;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
@@ -24,6 +25,7 @@ public class Utilisateur {
     private int utilisateur_id;
 
     @Column(nullable = false)
+    @NaturalId
     private String pseudo;
 
     @Column(nullable = false)

@@ -14,7 +14,7 @@ public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
     @Override
     @Transactional(readOnly = true)
     public T get(K id) {
-        return genericDAO.find(id);
+        return genericDAO.findById(id);
     }
 
     @Override
@@ -36,6 +36,7 @@ public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<T> getAll() {
        return genericDAO.findAll();
     }
