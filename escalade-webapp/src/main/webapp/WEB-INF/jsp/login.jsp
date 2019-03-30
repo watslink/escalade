@@ -2,12 +2,11 @@
          pageEncoding="UTF-8"%>
 <%@include file="include/taglibs.jsp"%>
 <html>
-<head>
-    <%@include file="include/head.jsp"%>
-</head>
-<body style='margin:50px;'>
+<%@include file="include/head.jsp"%>
+<body>
+<div class="container">
 <h2>Connection</h2>
-<form action="login" method="post">
+<form class="form-group" action="login" method="post">
     <c:if test="${param.error != null}">
         <div class="alert alert-danger">
             <p>Pseudo ou mot de passe invalide</p>
@@ -29,5 +28,6 @@
 
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>
+</div>
 </body>
 </html>

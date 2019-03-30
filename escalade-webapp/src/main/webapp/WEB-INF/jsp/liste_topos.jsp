@@ -5,6 +5,7 @@
 <%@include file="include/head.jsp"%>
 <body>
 <%@include file="include/menu.jsp"%>
+
 <h1> Liste des topos existants:</h1>
 <div class="container">
     <table class="table table-striped">

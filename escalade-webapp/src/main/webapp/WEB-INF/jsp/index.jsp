@@ -5,6 +5,6 @@
 <%@include file="include/head.jsp"%>
 <body>
 <%@include file="include/menu.jsp"%>
-<h2>Hello World!</h2>
+<h2>Bonjour ${utilisateurConnecte.pseudo}</h2>
 </body>
 </html>
