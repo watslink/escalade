@@ -48,8 +48,12 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .and()
-                .csrf().disable();
 
+                .and()
+                .logout().deleteCookies("JSESSIONID")
+
+                .and()
+                .rememberMe().key("uniqueAndSecret")
+                ;
     }
 }

@@ -5,8 +5,9 @@
 <%@include file="include/head.jsp"%>
 <body>
 <div class="container">
-<h2>Connection</h2>
-<form class="form-group" action="login" method="post">
+
+<form:form  action="login" method="post" class="well" >
+    <legend>Connection:</legend>
     <c:if test="${param.error != null}">
         <div class="alert alert-danger">
             <p>Pseudo ou mot de passe invalide</p>
@@ -17,17 +18,20 @@
             Vous êtes deconnecté.
         </div>
     </c:if>
-    <p>
+    <div class="form-group">
         <label for="username">Pseudo</label>
-        <input type="text" id="username" name="username"/>
-    </p>
-    <p>
+        <input type="text" id="username" name="username" class="form-control"/>
+    </div>
+    <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password"/>
-    </p>
+        <input type="password" id="password" name="password" class="form-control"/>
+    </div>
+    <label class="checkbox-inline">
+        <input type="checkbox">Se souvenir de moi
+    </label>
 
     <button type="submit" class="btn btn-primary">Valider</button>
-</form>
+</form:form>
 </div>
 </body>
 </html>
