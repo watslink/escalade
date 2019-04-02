@@ -35,7 +35,7 @@ public class Utilisateur {
     private String mot_de_passe;
 
     @Column
-    private int enabled;
+    private boolean enabled;
 
     @Column
     private String role;
@@ -56,12 +56,12 @@ public class Utilisateur {
         this.pseudo = pseudo;
         this.mail = mail;
         this.mot_de_passe = BCryptManagerUtil.passwordencoder().encode(mot_de_passe);
-        this.enabled=1;
+        this.enabled=true;
         this.role="USER";
     }
 
     public Utilisateur() {
-        this.enabled=1;
+        this.enabled=true;
         this.role="USER";
     }
 
