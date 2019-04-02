@@ -6,7 +6,7 @@
 <body>
 <div class="container">
 
-<form:form  action="login" method="post" class="well" >
+<form:form  action="login" method="post" class="well, col-lg-4 col-offset-4 centered" >
     <legend>Connection:</legend>
     <c:if test="${param.error != null}">
         <div class="alert alert-danger">
@@ -26,11 +26,14 @@
         <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" class="form-control"/>
     </div>
+
+    <button type="submit" class="btn btn-primary">Valider</button>
     <label class="checkbox-inline">
         <input type="checkbox">Se souvenir de moi
     </label>
+    <a href="${pageContext.request.contextPath}/inscription">S'inscrire</a>
 
-    <button type="submit" class="btn btn-primary">Valider</button>
+
 </form:form>
 </div>
 </body>

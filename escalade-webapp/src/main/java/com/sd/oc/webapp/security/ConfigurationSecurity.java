@@ -37,7 +37,7 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/resources/**","/webjars/**");
+                .antMatchers("/resources/**","/webjars/**", "/inscription");
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {

@@ -29,7 +29,6 @@ public class MainController {
     @ModelAttribute("utilisateurConnecte")
     public Utilisateur getUtilisateurConnecte(Model model){
         System.out.println("rentrer dans getUtilisateur");
-
              return   utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
     }
     @GetMapping("/")
@@ -63,4 +62,6 @@ public class MainController {
         }
         return "redirect:/";
     }
+
+
 }

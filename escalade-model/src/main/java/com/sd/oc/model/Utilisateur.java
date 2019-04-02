@@ -61,7 +61,10 @@ public class Utilisateur {
     }
 
     public Utilisateur() {
+        this.enabled=1;
+        this.role="USER";
     }
+
 
     public void setMot_de_passe(String mot_de_passe) {
         this.mot_de_passe = BCryptManagerUtil.passwordencoder().encode(mot_de_passe);
