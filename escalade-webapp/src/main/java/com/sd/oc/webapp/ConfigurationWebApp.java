@@ -40,6 +40,8 @@ public class ConfigurationWebApp implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+
     }
 
 
