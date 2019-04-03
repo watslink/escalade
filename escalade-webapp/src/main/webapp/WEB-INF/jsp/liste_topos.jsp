@@ -4,6 +4,8 @@
 <html>
 <%@include file="include/head.jsp"%>
 <body>
+<%@include file="include/header.jsp"%>
+
 <%@include file="include/menu.jsp"%>
 
 <h1> Liste des topos existants:</h1>
@@ -30,6 +32,6 @@
     </table>
 
 </div>
-
+<%@include file="include/footer.jsp"%>
 </body>
 </html>

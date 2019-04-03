@@ -4,7 +4,8 @@
 <html>
 <%@include file="include/head.jsp"%>
 <body>
-<div class="container">
+<%@include file="include/header.jsp"%>
+<div class="container marginForm">
     <div class="row centered-form">
         <div class="col-xs-12 col-sm-8  col-sm-offset-2 c" >
             <div class="panel panel-default">
@@ -29,20 +30,22 @@
             <div class="form-group">
                 <input type="password" id="password" name="password" placeholder="Mot de passe" class="form-control input-sm"/>
             </div>
-            <div class="row">
-            <button type="submit" class="btn btn-primary">Valider</button>
-            <label class="checkbox-inline">
-                <input type="checkbox">Se souvenir de moi
-            </label>
-            </div>
-            <div class="row">
-            <a class="col-lg-offset-9" href="${pageContext.request.contextPath}/inscription">S'inscrire</a>
-            </div>
-            </div>
+            <input type="submit" value="Valider" class="btn btn-info btn-block">
 
+            <div class="row">
+                <div class="col-xs-9">
+                    <label class="checkbox-inline">
+                        <input type="checkbox">Se souvenir de moi
+                    </label>
+                </div>
+                <div class="pull-right" style="padding-right: 15px">
+                    <a  href="${pageContext.request.contextPath}/inscription">S'inscrire</a>
+                </div>
+            </div>
         </form:form>
             </div>
     </div>
+</div>
 </div>
 </div>
 </body>

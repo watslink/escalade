@@ -4,6 +4,8 @@
 <html>
 <%@include file="include/head.jsp"%>
 <body>
+<%@include file="include/header.jsp"%>
+
 <%@include file="include/menu.jsp"%>
 
     <h3>Topo: ${topo.nom}</h3>
@@ -33,6 +35,6 @@
     </table>
 
 </div>
-
+<%@include file="include/footer.jsp"%>
 </body>
 </html>
