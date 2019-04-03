@@ -1,11 +1,12 @@
 package com.sd.oc.webapp;
 
 import com.sd.oc.Service.ConfigurationService;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.Ordered;
+
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Import(ConfigurationService.class)
 public class ConfigurationWebApp implements WebMvcConfigurer {
 
+
     /**
      * Configuration du viewResolver
      * @return resolver
@@ -30,6 +32,7 @@ public class ConfigurationWebApp implements WebMvcConfigurer {
         resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");
         resolver.setViewClass(JstlView.class);
+
         return resolver;
     }
 

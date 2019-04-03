@@ -5,36 +5,45 @@
 <%@include file="include/head.jsp"%>
 <body>
 <div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8  col-sm-offset-2 c" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+            <c:if test="${param.error != null}">
+                <div class="alert alert-danger">
+                    <p>Pseudo ou mot de passe invalide</p>
+                </div>
+            </c:if>
+            <c:if test="${param.logout != null}">
+                <div class="alert alert-success">
+                    Vous êtes deconnecté.
+                </div>
+            </c:if>
+                <h3 class="panel-title">Connection: </h3>
+            </div>
+            <div class="panel-body">
+                <form:form  action="login" method="post" class="col-xs-12 col-sm-8  col-sm-offset-2"  >
+                <div class="form-group">
+                    <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Pseudo"/>
+                </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Mot de passe" class="form-control input-sm"/>
+            </div>
+            <div class="row">
+            <button type="submit" class="btn btn-primary">Valider</button>
+            <label class="checkbox-inline">
+                <input type="checkbox">Se souvenir de moi
+            </label>
+            </div>
+            <div class="row">
+            <a class="col-lg-offset-9" href="${pageContext.request.contextPath}/inscription">S'inscrire</a>
+            </div>
+            </div>
 
-<form:form  action="login" method="post" class="well, col-lg-4 col-offset-4 centered" >
-    <legend>Connection:</legend>
-    <c:if test="${param.error != null}">
-        <div class="alert alert-danger">
-            <p>Pseudo ou mot de passe invalide</p>
-        </div>
-    </c:if>
-    <c:if test="${param.logout != null}">
-        <div class="alert alert-success">
-            Vous êtes deconnecté.
-        </div>
-    </c:if>
-    <div class="form-group">
-        <label for="username">Pseudo</label>
-        <input type="text" id="username" name="username" class="form-control"/>
+        </form:form>
+            </div>
     </div>
-    <div class="form-group">
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" class="form-control"/>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Valider</button>
-    <label class="checkbox-inline">
-        <input type="checkbox">Se souvenir de moi
-    </label>
-    <a href="${pageContext.request.contextPath}/inscription">S'inscrire</a>
-
-
-</form:form>
+</div>
 </div>
 </body>
 </html>
