@@ -16,7 +16,7 @@
                 <a data-toggle="dropdown" href="#">Topos<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="${pageContext.request.contextPath}/liste_topos">Liste des topos</a></li>
-                    <li><a href="#">Mes Topos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/mes_topos">Mes Topos</a></li>
                     <li><a href="#">Mes Emprunts</a></li>
                 </ul>
             </li>

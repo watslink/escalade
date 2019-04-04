@@ -11,6 +11,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +32,8 @@ public class MainController {
         System.out.println("rentrer dans getUtilisateur");
              return   utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
     }
+
+
     @GetMapping("/")
     public String pageAccueil(){
 
@@ -38,29 +41,16 @@ public class MainController {
     }
 
 
-    @GetMapping("/liste_topos")
-    public String liste_topos(Model model){
-
-        model.addAttribute("liste_topos", topoService.getAll());
-        return "liste_topos";
-    }
-
-    @GetMapping("/detail_topo")
-    public String detail_topo(@RequestParam int topo_id, Model model){
-
-        model.addAttribute("topo", topoService.get(topo_id));
-        return "detail_topo";
-    }
-
     @GetMapping("/logout")
     public String logout(HttpServletRequest request,
-                         HttpServletResponse response) {
+                         HttpServletResponse response, SessionStatus status) {
         Authentication auth = SecurityContextHolder.getContext()
                 .getAuthentication();
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/";
+        status.setComplete();
+        return "redirect:/login?logout";
     }
 
 
