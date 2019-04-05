@@ -3,12 +3,10 @@ package com.sd.oc.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Objects;
+import java.util.Set;
 
 
 @Entity
@@ -22,6 +20,9 @@ public class Departement {
 
     @Column
     private String nom;
+
+    @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Site> listSite;
 
     public Departement() {
     }

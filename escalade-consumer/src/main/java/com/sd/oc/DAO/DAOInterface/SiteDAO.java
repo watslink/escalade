@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface SiteDAO extends GenericDAO<Site, Integer>{
 
-    List<Site> findByDepartement(Departement departement);
 }

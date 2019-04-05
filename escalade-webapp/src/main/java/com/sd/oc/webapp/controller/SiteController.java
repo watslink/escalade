@@ -31,7 +31,7 @@ public class SiteController {
     @GetMapping("/liste_sites_par_departement")
     public String liste_site_par_departement(@RequestParam String code_departement, Model model){
 
-        model.addAttribute("liste_sites", siteService.getByCodeDepartement(code_departement));
+        model.addAttribute("departement", departementService.get(code_departement));
         return "liste_sites_par_departement";
     }
 }

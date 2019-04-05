@@ -13,19 +13,10 @@ import java.util.List;
 public class SiteServiceImpl extends GenericServiceImpl<Site, Integer> implements SiteService {
 
 
-    @Autowired
-    private DepartementDAO departementDAO;
 
     @Autowired
-    private SiteDAO siteDAO;
-
     public SiteServiceImpl(SiteDAO siteDAO) {
         this.genericDAO = siteDAO;
     }
-
-    @Override
-    public List<Site> getByCodeDepartement(String code_departement) {
-
-        return siteDAO.findByDepartement(departementDAO.findById(code_departement));
-    }
 }
+

@@ -17,17 +17,4 @@ import java.util.List;
 public class SiteDAOImpl extends GenericDAOImpl<Site, Integer> implements SiteDAO {
 
 
-    @Override
-    public List<Site> findByDepartement(Departement departement) {
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-
-        CriteriaQuery<Site> q = cb.createQuery(Site.class);
-        Root<Site> c = q.from(Site.class);
-        q.select(c);
-        q.where(em.getCriteriaBuilder().equal(c.get("departement"), departement));
-
-        TypedQuery<Site> query = em.createQuery(q);
-        return query.getResultList();
-    }
-
 }
