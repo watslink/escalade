@@ -8,7 +8,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" href="#">Rechercher un site<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Liste par département</a></li>
+                    <li><a href="${pageContext.request.contextPath}/liste_sites">Liste par département</a></li>
                     <li><a href="#">Recherche par critères</a></li>
                 </ul>
             </li>
@@ -17,7 +17,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="${pageContext.request.contextPath}/liste_topos">Liste des topos</a></li>
                     <li><a href="${pageContext.request.contextPath}/mes_topos">Mes Topos</a></li>
-                    <li><a href="#">Mes Emprunts</a></li>
+                    <li><a href="${pageContext.request.contextPath}/mes_emprunts">Mes Emprunts</a></li>
                 </ul>
             </li>
         </ul>

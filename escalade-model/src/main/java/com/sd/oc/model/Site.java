@@ -23,8 +23,9 @@ public class Site {
     @Column(nullable = false)
     private String nom;
 
-    @Column(nullable = false)
-    private Integer departement;
+    @ManyToOne
+    @JoinColumn(name="code_departement")
+    private Departement departement;
 
     @Column(nullable = false)
     private String ville;
@@ -32,7 +33,7 @@ public class Site {
     @OneToMany(mappedBy ="site", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Secteur> listSecteur;
 
-    public Site(String nom, Integer departement, String ville) {
+    public Site(String nom, Departement departement, String ville) {
         this.nom = nom;
         this.departement = departement;
         this.ville = ville;

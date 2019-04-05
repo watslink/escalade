@@ -2,6 +2,7 @@ package com.sd.oc;
 
 import com.sd.oc.DAO.ConfigurationDAO;
 import com.sd.oc.DAO.DAOInterface.SecteurDAO;
+import com.sd.oc.DAO.DAOInterface.SiteDAO;
 import com.sd.oc.DAO.DAOInterface.UtilisateurDAO;
 import com.sd.oc.model.Secteur;
 import com.sd.oc.model.Utilisateur;
@@ -26,20 +27,8 @@ public class App
 
 
 
-        SecteurDAO secteurDAO=context.getBean(SecteurDAO.class);
+        SiteDAO siteDAO=context.getBean(SiteDAO.class);
 
-        Secteur secteur=secteurDAO.findById(2);
-
-        Set<Voie> listVoie=secteur.getListVoie();
-        System.out.println(listVoie);
-
-            for (Voie voie: secteur.getListVoie()) {
-                System.out.println(voie.getNom());
-            }
-
-        UtilisateurDAO utilisateurDAO=context.getBean(UtilisateurDAO.class);
-
-            utilisateurDAO.create(new Utilisateur("Robert","robert@gmail.com","motdepasse" ));
-
+      System.out.println(siteDAO.findById(7).getDepartement().getNom());
     }
 }

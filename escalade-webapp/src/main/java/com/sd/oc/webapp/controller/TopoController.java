@@ -35,8 +35,12 @@ public class TopoController {
     }
 
     @GetMapping("/mes_topos")
-    public String liste_mes_topos(Model model, HttpSession httpSession){
+    public String liste_mes_topos(){
         return "mes_topos";
     }
 
+    @GetMapping("/mes_emprunts")
+    public String liste_mes_emprunts(){
+        return "mes_emprunts";
+    }
 }
