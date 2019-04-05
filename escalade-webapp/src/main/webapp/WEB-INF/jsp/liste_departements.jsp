@@ -8,25 +8,23 @@
 
 <%@include file="include/menu.jsp"%>
 
-<h1> Liste des sites existants:</h1>
+<h1> Départements:</h1>
 <div class="container">
-    <table id="table" class="table sortable table-striped">
+    <table id="table" class="table  table-striped">
         <thead>
         <tr>
-            <th>Nom</th>
+            <th>N°</th>
             <th>Departement</th>
-            <th>Ville</th>
-            <th>Détails</th>
+            <th>Sites</th>
         </tr>
         </thead>
 
         <tbody>
-        <c:forEach items="${liste_sites}" var="site">
+        <c:forEach items="${liste_departements}" var="departement">
             <tr>
-                <td>${site.nom}</td>
-                <td>${site.departement}</td>
-                <td>${site.ville}</td>
-                <td><a href="${pageContext.request.contextPath}/detail_site?site_id=${site.site_id}" class="btn btn-primary">Détails</a> </td>
+                <td>${departement.code}</td>
+                <td>${departement.nom}</td>
+                <td><a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}" class="btn btn-primary">Détails</a> </td>
             </tr>
         </c:forEach>
         </tbody>
