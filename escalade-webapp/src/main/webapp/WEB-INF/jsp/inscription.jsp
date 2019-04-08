@@ -26,15 +26,18 @@
                         <form:form action="inscription" method="post" modelAttribute="utilisateur">
                             <div class="form-group">
                                 <form:input type="text" path="pseudo" id="pseudo" class="form-control input-sm" placeholder="Pseudo"/>
+                                <form:errors path="pseudo" cssClass="text-warning"/>
                             </div>
                             <div class="form-group">
-                                <form:input type="email" path="mail" id="mail" class="form-control input-sm" placeholder="Adresse Email"/>
+                                <form:input type="text" path="mail" id="mail" class="form-control input-sm" placeholder="Adresse Email"/>
+                                <form:errors path="mail" cssClass="text-warning"/>
                             </div>
 
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <form:input type="password"  path="mot_de_passe" id="password" class="form-control input-sm" placeholder="Mot de passe"/>
+                                        <form:errors path="mot_de_passe" cssClass="text-warning"/>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">

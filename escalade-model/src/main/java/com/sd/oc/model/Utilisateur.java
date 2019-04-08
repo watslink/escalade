@@ -6,10 +6,11 @@ import lombok.Setter;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.NaturalId;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 import java.util.Set;
 
@@ -26,12 +27,16 @@ public class Utilisateur {
 
     @Column(nullable = false)
     @NaturalId
+    @Length(min=3, max=20, message ="Le pseudo doit contenir entre 3 et 20 caractères")
     private String pseudo;
 
     @Column(nullable = false)
+    @Email(message="Format invalide")
+    @NotBlank(message = "Veuillez entrer une adresse mail valide")
     private String mail;
 
     @Column(nullable = false)
+    @Length(min=6, message = "Le mot de passe doit contenir  6 caractères minimum")
     private String mot_de_passe;
 
     @Column

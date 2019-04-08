@@ -6,10 +6,13 @@ import com.sd.oc.utils.BCryptManagerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.validation.Valid;
 
 
 @Controller
@@ -25,7 +28,13 @@ public class InscriptionController {
     }
 
     @PostMapping("/inscription")
-    public String postInscription(@ModelAttribute("utilisateur") Utilisateur utilisateur, @RequestParam String password_confirmation){
+    public String postInscription(  @RequestParam String password_confirmation,
+                                    @Valid @ModelAttribute("utilisateur") Utilisateur utilisateur,
+                                    BindingResult result){
+
+        if (result.hasErrors()){
+            return "inscription";
+        }
         if(!BCryptManagerUtil.passwordencoder().matches(password_confirmation, utilisateur.getMot_de_passe())){
 
             return "redirect:/inscription?errorPassword";
@@ -38,6 +47,6 @@ public class InscriptionController {
 
         utilisateurDAO.create(utilisateur);
 
-        return"login";
+        return"redirect:/login?inscrit";
     }
 }
