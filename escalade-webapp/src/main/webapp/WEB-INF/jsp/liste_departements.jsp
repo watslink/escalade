@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@include file="include/taglibs.jsp"%>
+         pageEncoding="UTF-8" %>
+<%@include file="include/taglibs.jsp" %>
 <html>
-<%@include file="include/head.jsp"%>
+<%@include file="include/head.jsp" %>
 <body>
-<%@include file="include/header.jsp"%>
+<%@include file="include/header.jsp" %>
 
-<%@include file="include/menu.jsp"%>
+<%@include file="include/menu.jsp" %>
 
 <h1> Départements:</h1>
 <div class="container">
@@ -24,7 +24,9 @@
             <tr>
                 <td>${departement.code}</td>
                 <td>${departement.nom}</td>
-                <td><a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}" class="btn btn-primary">Détails</a> </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}"
+                       class="btn btn-primary">Détails</a></td>
             </tr>
         </c:forEach>
         </tbody>
@@ -32,6 +34,6 @@
     </table>
 
 </div>
-<%@include file="include/footer.jsp"%>
+<%@include file="include/footer.jsp" %>
 </body>
 </html>

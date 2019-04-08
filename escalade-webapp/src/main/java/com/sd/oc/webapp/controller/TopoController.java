@@ -27,11 +27,11 @@ public class TopoController {
         return "liste_topos";
     }
 
-    @GetMapping("/detail_topo")
-    public String detail_topo(@RequestParam int topo_id, Model model){
+    @GetMapping("/liste_sites_par_topo")
+    public String liste_sites_par_topo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
-        return "detail_topo";
+        return "liste_sites_par_topo";
     }
 
     @GetMapping("/mes_topos")
