@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("utilisateurConnecte")
-public class SiteController {
+public class DepartementController {
 
-    @Autowired
-    private SiteService siteService;
 
     @Autowired
     private DepartementService departementService;
