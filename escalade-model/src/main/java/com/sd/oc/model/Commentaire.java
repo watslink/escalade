@@ -20,8 +20,8 @@ public class Commentaire {
     private String texte;
 
     @ManyToOne
-    @JoinColumn(name ="longueur_id")
-    private Longueur longueur;
+    @JoinColumn(name ="voie_id")
+    private Voie voie;
 
     @ManyToOne
     @JoinColumn(name ="utilisateur_id")

@@ -33,9 +33,6 @@ public class Longueur {
     @JoinColumn(name="voie_id")
     private Voie voie;
 
-    @OneToMany(mappedBy ="longueur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Commentaire> listCommentaire;
-
 
     public Longueur(String description, String cotation, int numero, int nombre_points, Voie voie) {
         this.description = description;

@@ -30,6 +30,9 @@ public class Voie {
     @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Longueur> listLongueur;
 
+    @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Commentaire> listCommentaire;
+
     public Voie(String nom, Secteur secteur) {
         this.nom = nom;
         this.secteur = secteur;
