@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +19,9 @@ public class Commentaire {
 
     @Column(nullable = false)
     private String texte;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
 
     @ManyToOne
     @JoinColumn(name ="voie_id")

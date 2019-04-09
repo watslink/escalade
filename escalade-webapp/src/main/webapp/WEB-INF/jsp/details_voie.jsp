@@ -10,29 +10,51 @@
 <h1> Voie: ${voie.nom} </h1>
 <div class="container-fluid">
 
-    <c:forEach items="${voie.listLongueur}" var="longueur">
+
 
 
         <table  id="table" class="table table-striped ">
             <thead>
             <tr class="row">
-                <th class="col-xs-6">Voie</th>
-                <th class="col-xs-3">Détails</th>
+                <th >Numéro</th>
+                <th >Description</th>
+                <th >Cotation</th>
+                <th >Points</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${secteur.listVoie}" var="voie">
+            <c:forEach items="${voie.listLongueur}" var="longueur">
                 <tr class="row">
-                    <td class="col-xs-6"> ${voie.nom}</td>
-                    <td class="col-xs-3"><a href="${pageContext.request.contextPath}/details_voie?voie_id=${voie.voie_id}"
-                                            class="btn btn-primary">Détails</a></td>
+                    <td > ${longueur.numero}</td>
+                    <td > ${longueur.description}</td>
+                    <td > ${longueur.cotation}</td>
+                    <td > ${longueur.nombre_points}</td>
                 </tr>
             </c:forEach>
             </tbody>
 
         </table>
 
-    </c:forEach>
+    <table  id="table" class="table table-striped ">
+        <thead>
+        <tr class="row">
+            <th>Date</th>
+            <th>Pseudo</th>
+            <th>Commentaire</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${voie.listCommentaire}" var="commentaire">
+            <tr class="row">
+                <td> ${commentaire.date}</td>
+                <td> ${commentaire.utilisateur.pseudo}</td>
+                <td> ${commentaire.texte}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+
+    </table>
+
 
 
 </div>

@@ -4,6 +4,7 @@ package com.sd.oc.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.core.annotation.Order;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,9 +29,11 @@ public class Voie {
     private Secteur secteur;
 
     @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OrderBy("numero ASC")
     private Set<Longueur> listLongueur;
 
     @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OrderBy("date DESC")
     private Set<Commentaire> listCommentaire;
 
     public Voie(String nom, Secteur secteur) {
