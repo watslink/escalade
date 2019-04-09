@@ -23,7 +23,7 @@
             <tr>
                 <td>${site.nom}</td>
                 <td>${site.ville}</td>
-                <td><a href="${pageContext.request.contextPath}/detail_site?site_id=${site.site_id}"
+                <td><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
                        class="btn btn-primary">Détails</a></td>
             </tr>
         </c:forEach>
