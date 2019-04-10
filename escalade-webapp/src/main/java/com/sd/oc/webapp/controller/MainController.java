@@ -19,21 +19,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@SessionAttributes("utilisateurConnecte")
-@Scope("session")
-public class MainController {
+
+public class MainController extends AbstractController{
 
     @Autowired
     private TopoService topoService;
-
-    @Autowired
-    private UtilisateurService utilisateurService;
-
-    @ModelAttribute("utilisateurConnecte")
-    public Utilisateur getUtilisateurConnecte(Model model){
-        System.out.println("rentrer dans getUtilisateur");
-             return   utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
-    }
 
 
     @GetMapping("/")

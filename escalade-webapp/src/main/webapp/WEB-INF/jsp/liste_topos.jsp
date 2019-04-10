@@ -26,6 +26,8 @@
                 <td>${topo.description}</td>
                 <td><a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topo.topo_id}"
                        class="btn btn-primary">Détails</a></td>
+                <td><a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}"
+                      class="btn btn-primary">Ajouter</a></td>
             </tr>
         </c:forEach>
         </tbody>
