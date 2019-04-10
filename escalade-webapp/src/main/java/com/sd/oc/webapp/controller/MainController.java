@@ -4,6 +4,7 @@ import com.sd.oc.Service.ServiceInterface.TopoService;
 import com.sd.oc.Service.ServiceInterface.UtilisateurService;
 import com.sd.oc.model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @SessionAttributes("utilisateurConnecte")
+@Scope("session")
 public class MainController {
 
     @Autowired

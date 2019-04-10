@@ -16,7 +16,7 @@
             <AppenderRef ref="STDOUT"/>
         </Logger>
 
-        <Root level="error">
+        <Root level="debug">
             <AppenderRef ref="STDOUT"/>
         </Root>
     </Loggers>

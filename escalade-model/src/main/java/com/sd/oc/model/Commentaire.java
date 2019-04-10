@@ -33,6 +33,7 @@ public class Commentaire {
 
     public Commentaire(String texte) {
         this.texte = texte;
+        this.date= new Date();
     }
 
     public Commentaire() {

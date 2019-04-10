@@ -46,7 +46,7 @@
         <tbody>
         <c:forEach items="${voie.listCommentaire}" var="commentaire">
             <tr class="row">
-                <td> ${commentaire.date}</td>
+                <td><fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${commentaire.date}"/></td>
                 <td> ${commentaire.utilisateur.pseudo}</td>
                 <td> ${commentaire.texte}</td>
             </tr>
@@ -54,6 +54,14 @@
         </tbody>
 
     </table>
+<form:form action="details_voie" method="post" modelAttribute="commentaire">
+
+    <label>
+        <form:textarea path="texte"  id="texte" placeholder="Commenter..." class="form-control" rows="3"/>
+    </label>
+    <input name="voie_id" type="hidden" value="${voie.voie_id}"/>
+    <input type="submit" value="Valider" class="btn btn-info btn-block">
+</form:form>
 
 
 
