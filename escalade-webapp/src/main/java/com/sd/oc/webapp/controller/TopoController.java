@@ -56,6 +56,15 @@ public class TopoController extends AbstractController{
         return "mes_topos";
     }
 
+    @GetMapping("/removeFromMy_topos")
+    public String remove_topos(@RequestParam int topoAPreter_id){
+
+        TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
+        topoAPreterService.remove(topoAPreter_id);
+
+        return "redirect:/mes_topos";
+    }
+
     @GetMapping("/mes_emprunts")
     public String liste_mes_emprunts(){
         return "mes_emprunts";

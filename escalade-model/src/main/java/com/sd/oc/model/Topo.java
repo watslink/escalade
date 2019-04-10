@@ -2,6 +2,8 @@ package com.sd.oc.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
@@ -29,6 +31,10 @@ public class Topo {
             joinColumns={@JoinColumn(name="topo_id")},
             inverseJoinColumns={@JoinColumn(name="site_id")})
     private Set<Site> listSite;
+
+    @OneToMany(mappedBy ="topoReference", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Set<TopoAPreter> listTopoAPreter;
 
     public Topo(String nom, String description) {
         this.nom = nom;

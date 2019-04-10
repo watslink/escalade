@@ -16,7 +16,6 @@ public abstract class AbstractController {
 
     @ModelAttribute("utilisateurConnecte")
     public Utilisateur getUtilisateurConnecte(){
-        System.out.println("rentrer dans getUtilisateur");
         return   utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 

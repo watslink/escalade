@@ -25,7 +25,12 @@
                 <td>${topoAPreter.topoReference.description}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topoAPreter.topoReference.topo_id}"
-                       class="btn btn-primary">Détails</a></td>
+                       class="btn btn-primary">Détails</a>
+                </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/removeFromMy_topos?topoAPreter_id=${topoAPreter.utilisateur_topos_id}"
+                       class="btn btn-primary">Supprimer</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

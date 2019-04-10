@@ -49,7 +49,7 @@ public class Utilisateur {
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Commentaire> listCommentaire;
 
-    @OneToMany(mappedBy ="utilisateurProprietaire", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="utilisateurProprietaire", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<TopoAPreter> listTopoAPreter;
 
