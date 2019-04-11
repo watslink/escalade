@@ -8,10 +8,7 @@ import com.sd.oc.model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -43,10 +40,22 @@ public class TopoController extends AbstractController{
         return "redirect:/liste_topos";
     }
 
+    @PostMapping("/addToMy_toposEmpruntes")
+    public String add_emprunt(@RequestParam int topoAPreter_id){
+
+        TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
+        topoAPreter.setUtilisateurEmprunteur(getUtilisateurConnecte());
+        topoAPreter.setDisponible(false);
+        topoAPreterService.update(topoAPreter);
+
+        return "redirect:/liste_topos";
+    }
+
     @GetMapping("/liste_sites_par_topo")
     public String liste_sites_par_topo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
+        model.addAttribute("topoAPreter",new TopoAPreter());
         return "liste_sites_par_topo";
     }
 

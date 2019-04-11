@@ -32,9 +32,7 @@ public class InscriptionController {
                                     @Valid @ModelAttribute("utilisateur") Utilisateur utilisateur,
                                     BindingResult result){
 
-        if (result.hasErrors()){
-            return "inscription";
-        }
+
         if(!BCryptManagerUtil.passwordencoder().matches(password_confirmation, utilisateur.getMot_de_passe())){
 
             return "redirect:/inscription?errorPassword";

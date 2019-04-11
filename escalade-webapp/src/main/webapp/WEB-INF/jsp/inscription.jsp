@@ -25,28 +25,25 @@
                 <div class="panel-body">
                     <form:form action="inscription" method="post" modelAttribute="utilisateur">
                         <div class="form-group">
-                            <form:input type="text" path="pseudo" id="pseudo" class="form-control input-sm"
-                                        placeholder="Pseudo"/>
-                            <form:errors path="pseudo" cssClass="text-warning"/>
+                            <form:input type="text" minlength="3" path="pseudo" id="pseudo" class="form-control input-sm"
+                                        placeholder="Pseudo" required="true"/>
                         </div>
                         <div class="form-group">
-                            <form:input type="text" path="mail" id="mail" class="form-control input-sm"
-                                        placeholder="Adresse Email"/>
-                            <form:errors path="mail" cssClass="text-warning"/>
+                            <form:input type="email" path="mail" id="mail" class="form-control input-sm"
+                                        placeholder="Adresse Email" required="true"/>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <form:input type="password" path="mot_de_passe" id="password"
-                                                class="form-control input-sm" placeholder="Mot de passe"/>
-                                    <form:errors path="mot_de_passe" cssClass="text-warning"/>
+                                    <form:input type="password" minlength="6" path="mot_de_passe" id="password"
+                                                class="form-control input-sm" placeholder="Mot de passe" required="true"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <input type="password" name="password_confirmation" id="password_confirmation"
-                                           class="form-control input-sm" placeholder="Confirmer Mot de passe"/>
+                                           class="form-control input-sm" placeholder="Confirmer Mot de passe" required="true"/>
                                 </div>
                             </div>
                         </div>
