@@ -15,7 +15,8 @@
         <tr>
             <th>Nom</th>
             <th>Description</th>
-            <th>Détails</th>
+
+
         </tr>
         </thead>
 
@@ -28,6 +29,8 @@
                        class="btn btn-primary">Détails</a></td>
                 <td><a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}"
                       class="btn btn-primary">Ajouter</a></td>
+                <td><a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"
+                       class="btn btn-primary">Emprunter</a></td>
             </tr>
         </c:forEach>
         </tbody>

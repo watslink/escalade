@@ -48,17 +48,23 @@ public class TopoController extends AbstractController{
         topoAPreter.setDisponible(false);
         topoAPreterService.update(topoAPreter);
 
-        return "redirect:/liste_topos";
+        return "redirect:/emprunter_topo?topo_id="+topoAPreter.getTopoReference().getTopo_id();
     }
 
     @GetMapping("/liste_sites_par_topo")
     public String liste_sites_par_topo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
-        model.addAttribute("topoAPreter",new TopoAPreter());
         return "liste_sites_par_topo";
     }
 
+    @GetMapping("/emprunter_topo")
+    public String emprunter_topo(@RequestParam int topo_id, Model model){
+
+        model.addAttribute("topo", topoService.get(topo_id));
+        model.addAttribute("topoAPreter",new TopoAPreter());
+        return "emprunter_topo";
+    }
 
     @GetMapping("/mes_topos")
     public String liste_mes_topos(){
