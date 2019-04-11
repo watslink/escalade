@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -41,10 +43,15 @@ public class TopoController extends AbstractController{
     }
 
     @PostMapping("/addToMy_toposEmpruntes")
-    public String add_emprunt(@RequestParam int topoAPreter_id){
+    public String add_emprunt(@RequestParam int topoAPreter_id, @RequestParam String date){
 
         TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
         topoAPreter.setUtilisateurEmprunteur(getUtilisateurConnecte());
+        try {
+            topoAPreter.setDate_retour(new SimpleDateFormat("dd/MM/yyyy").parse(date));
+        } catch (ParseException e) {
+            return "redirect:/emprunter_topo?topo_id="+topoAPreter.getTopoReference().getTopo_id();
+        }
         topoAPreter.setDisponible(false);
         topoAPreterService.update(topoAPreter);
 
@@ -72,13 +79,25 @@ public class TopoController extends AbstractController{
     }
 
     @GetMapping("/removeFromMy_topos")
-    public String remove_topos(@RequestParam int topoAPreter_id){
+    public String remove_topo(@RequestParam int topoAPreter_id){
 
         TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
         topoAPreterService.remove(topoAPreter_id);
 
         return "redirect:/mes_topos";
     }
+
+    @GetMapping("/removeFromMy_emprunts")
+    public String remove_emprunt(@RequestParam int topoAPreter_id){
+
+        TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
+        topoAPreter.setUtilisateurEmprunteur(null);
+        topoAPreter.setDisponible(true);
+        topoAPreter.setDate_retour(null);
+        topoAPreterService.update(topoAPreter);
+        return "redirect:/mes_emprunts";
+    }
+
 
     @GetMapping("/mes_emprunts")
     public String liste_mes_emprunts(){

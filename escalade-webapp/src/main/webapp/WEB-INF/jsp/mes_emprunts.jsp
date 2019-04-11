@@ -24,8 +24,13 @@
                 <td>${topoAPreter.topoReference.nom}</td>
                 <td>${topoAPreter.topoReference.description}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/detail_topo?topo_id=${topoAPreter.topoReference.topo_id}"
-                       class="btn btn-primary">Détails</a></td>
+                    <a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topoAPreter.topoReference.topo_id}"
+                       class="btn btn-primary">Détails</a>
+                </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/removeFromMy_emprunts?topoAPreter_id=${topoAPreter.utilisateur_topos_id}"
+                       class="btn btn-primary">Rendre</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

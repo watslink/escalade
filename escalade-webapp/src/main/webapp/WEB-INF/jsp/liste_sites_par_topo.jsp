@@ -7,7 +7,7 @@
 <%@include file="include/header.jsp" %>
 
 <%@include file="include/menu.jsp" %>
-<h1> Liste des sites du topo: ${topo.nom} </h1>
+<h1> Liste des sites </h1>
 <div class="container">
     <h1> ${topo.nom} </h1>
 
