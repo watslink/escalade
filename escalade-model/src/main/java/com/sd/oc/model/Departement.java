@@ -21,7 +21,7 @@ public class Departement {
     @Column
     private String nom;
 
-    @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Site> listSite;
 
     public Departement() {

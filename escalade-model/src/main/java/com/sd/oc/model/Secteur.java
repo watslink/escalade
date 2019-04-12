@@ -30,7 +30,7 @@ public class Secteur {
     @JoinColumn(name="site_id")
     private Site site;
 
-    @OneToMany(mappedBy ="secteur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="secteur", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Voie> listVoie;
 
     public Secteur(String nom, Site site, Set<Voie> listVoie) {

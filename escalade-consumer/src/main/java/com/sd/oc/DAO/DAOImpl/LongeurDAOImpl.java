@@ -30,16 +30,16 @@ public class LongeurDAOImpl extends GenericDAOImpl<Longueur, Integer> implements
         Root<Longueur> c = q.from(Longueur.class);
 
         Predicate likeRestriction=cb.and();
-        if(code_departement != null)
+        if(!code_departement.equals(""))
         likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("departement").get("code"),code_departement));
-        if(ville != null)
+        if(!ville.equals(""))
         likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("ville"),ville));
 
         likeRestriction.getExpressions().add(cb.between(c.<Integer>get("hauteur"), hauteur_min , hauteur_max));
 
         likeRestriction.getExpressions().add(cb.between(c.<Integer>get("nombre_points"), nombre_points_min, nombre_points_max));
 
-        if(cotation != null)
+        if(!cotation.equals(""))
         likeRestriction.getExpressions().add(cb.equal( c.get("cotation"), cotation));
 
         q.select(c).where(likeRestriction);

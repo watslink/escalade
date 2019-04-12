@@ -9,7 +9,7 @@
                 <a data-toggle="dropdown" href="#">Rechercher un site<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="${pageContext.request.contextPath}/liste_departements">Liste par département</a></li>
-                    <li><a href="#">Recherche par critères</a></li>
+                    <li><a href="${pageContext.request.contextPath}/recherche_multi">Recherche par critères</a></li>
                 </ul>
             </li>
             <li class="dropdown">

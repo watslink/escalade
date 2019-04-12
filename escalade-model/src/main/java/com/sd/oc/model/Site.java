@@ -30,7 +30,7 @@ public class Site {
     @Column(nullable = false)
     private String ville;
 
-    @OneToMany(mappedBy ="site", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="site", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Secteur> listSecteur;
 
     public Site(String nom, Departement departement, String ville) {

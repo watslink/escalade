@@ -41,7 +41,7 @@ public class Utilisateur {
     @Column
     private String role;
 
-    @OneToMany(mappedBy ="utilisateur", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy ="utilisateur", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Commentaire> listCommentaire;
 

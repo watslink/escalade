@@ -16,21 +16,14 @@ import java.util.List;
  */
 public class App
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) {
         System.out.println(
-                "Hello World!" );
+                "Hello World!");
 
-        ApplicationContext context= new AnnotationConfigApplicationContext(ConfigurationDAO.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(ConfigurationDAO.class);
 
 
-
-        LongueurDAO longueurDAO=context.getBean(LongueurDAO.class);
-
-    List<Longueur> longList=longueurDAO.getListFromCriteria();
-
-        for (Longueur longueur : longList ) {
-            System.out.println(longueur.getDescription());
-        }
     }
+
+
 }
