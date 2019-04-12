@@ -18,7 +18,9 @@ import java.util.List;
 @Repository
 public class LongeurDAOImpl extends GenericDAOImpl<Longueur, Integer> implements LongueurDAO {
 
-    public List<Longueur> getListFromCriteria(){
+    public List<Longueur> getListFromCriteria(String cotation, int nombre_points_min,int nombre_points_max,
+                                              int hauteur_min, int hauteur_max, String code_departement,
+                                              String ville){
 
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -27,11 +29,18 @@ public class LongeurDAOImpl extends GenericDAOImpl<Longueur, Integer> implements
 
         Root<Longueur> c = q.from(Longueur.class);
 
-        Predicate likeRestriction = cb.and(
-                cb.equal( c.get("cotation"), "5b"),
-                cb.equal( c.get("nombre_points"), "19"),
-                cb.equal(c.get("voie").get("secteur").get("site").get("ville"),"Les Ecrennes")
-        );
+        Predicate likeRestriction=cb.and();
+        if(code_departement != null)
+        likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("departement").get("code"),code_departement));
+        if(ville != null)
+        likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("ville"),ville));
+
+        likeRestriction.getExpressions().add(cb.between(c.<Integer>get("hauteur"), hauteur_min , hauteur_max));
+
+        likeRestriction.getExpressions().add(cb.between(c.<Integer>get("nombre_points"), nombre_points_min, nombre_points_max));
+
+        if(cotation != null)
+        likeRestriction.getExpressions().add(cb.equal( c.get("cotation"), cotation));
 
         q.select(c).where(likeRestriction);
 
