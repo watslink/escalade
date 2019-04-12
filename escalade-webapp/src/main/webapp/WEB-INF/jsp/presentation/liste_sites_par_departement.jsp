@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="include/taglibs.jsp" %>
+<%@include file="../include/taglibs.jsp" %>
 <html>
-<%@include file="include/head.jsp" %>
+<%@include file="../include/head.jsp" %>
 <body>
-<%@include file="include/header.jsp" %>
+<%@include file="../include/header.jsp" %>
 
-<%@include file="include/menu.jsp" %>
+<%@include file="../include/menu.jsp" %>
 <h1> Liste des sites du département: ${departement.nom} ${departement.code}</h1>
 <div class="container">
     <table id="table" class="table table-striped">
@@ -32,6 +32,6 @@
     </table>
 
 </div>
-<%@include file="include/footer.jsp" %>
+<%@include file="../include/footer.jsp" %>
 </body>
 </html>

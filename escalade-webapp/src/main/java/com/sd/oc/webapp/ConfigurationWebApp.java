@@ -50,6 +50,6 @@ public class ConfigurationWebApp implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/login").setViewName("acces/login");
     }
 }

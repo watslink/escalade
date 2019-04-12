@@ -1,7 +1,9 @@
 package com.sd.oc;
 
 import com.sd.oc.DAO.ConfigurationDAO;
+import com.sd.oc.DAO.DAOInterface.LongueurDAO;
 import com.sd.oc.DAO.DAOInterface.SiteDAO;
+import com.sd.oc.model.Longueur;
 import com.sd.oc.model.Site;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -23,8 +25,12 @@ public class App
 
 
 
-        SiteDAO siteDAO=context.getBean(SiteDAO.class);
+        LongueurDAO longueurDAO=context.getBean(LongueurDAO.class);
 
+    List<Longueur> longList=longueurDAO.getListFromCriteria();
 
+        for (Longueur longueur : longList ) {
+            System.out.println(longueur.getDescription());
+        }
     }
 }

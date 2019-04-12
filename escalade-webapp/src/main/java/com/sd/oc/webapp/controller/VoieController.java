@@ -5,7 +5,6 @@ import com.sd.oc.Service.ServiceInterface.UtilisateurService;
 import com.sd.oc.Service.ServiceInterface.VoieService;
 import com.sd.oc.model.Commentaire;
 import com.sd.oc.model.Utilisateur;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +30,7 @@ public class VoieController {
 
         model.addAttribute("voie", voieService.get(voie_id));
         model.addAttribute("commentaire", new Commentaire());
-        return "details_voie";
+        return "presentation/details_voie";
     }
 
     @PostMapping("/details_voie")

@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="include/taglibs.jsp" %>
+<%@include file="../include/taglibs.jsp" %>
 <html>
-<%@include file="include/head.jsp" %>
+<%@include file="../include/head.jsp" %>
 <body>
-<%@include file="include/header.jsp" %>
+<%@include file="../include/header.jsp" %>
 
-<%@include file="include/menu.jsp" %>
+<%@include file="../include/menu.jsp" %>
 
 <div class="container">
     <h1> ${topo.nom} </h1>
@@ -30,7 +30,9 @@
                             <input type="hidden" id="topoAPreter_id" name="topoAPreter_id" value="${topoAPreter.utilisateur_topos_id}">
                             <div class="form-group">
                                 <div class='input-group date datepicker'>
-                                    <input type='text' name="date" class="form-control" />
+                                    <label>
+                                        <input type='text' name="date" class="form-control" required>
+                                    </label>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                      </span>
@@ -53,12 +55,31 @@
 
 
 </div>
-<%@include file="include/footer.jsp" %>
+<%@include file="../include/footer.jsp" %>
 <script type="text/javascript">
+    $(function($){
+        $.fn.datepicker.dates['fr'] = {
+            days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+            daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+            daysMin: ["d", "l", "ma", "me", "j", "v", "s"],
+            months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+            monthsShort: ["janv.", "févr.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+            today: "Aujourd'hui",
+            monthsTitle: "Mois",
+            clear: "Effacer",
+            weekStart: 1,
+            format: "dd/mm/yyyy"
+        };
+    }(jQuery));
+
+
     $(function () {
         $('.datepicker').datepicker({
             format:'dd/mm/yyyy',
-            startDate: new Date()
+            startDate: new Date(),
+            language: 'fr',
+            autoclose: true,
+            todayHighlight: true
         });
     });
 </script>

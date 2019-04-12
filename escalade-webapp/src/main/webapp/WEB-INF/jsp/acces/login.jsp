@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="include/taglibs.jsp" %>
+<%@include file="../include/taglibs.jsp" %>
 <html>
-<%@include file="include/head.jsp" %>
+<%@include file="../include/head.jsp" %>
 <body>
-<%@include file="include/header.jsp" %>
+<%@include file="../include/header.jsp" %>
 <div class="container marginForm">
     <div class="row centered-form">
         <div class="col-xs-12 col-sm-8  col-sm-offset-2 c">

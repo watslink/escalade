@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 
@@ -20,6 +19,6 @@ public class SiteController {
     public String liste_sites_par_topo(@RequestParam int site_id, Model model){
 
         model.addAttribute("site", siteService.get(site_id));
-        return "liste_secteurs";
+        return "presentation/liste_secteurs";
     }
 }

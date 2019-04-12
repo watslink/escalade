@@ -2,18 +2,14 @@ package com.sd.oc.webapp.controller;
 
 import com.sd.oc.Service.ServiceInterface.TopoAPreterService;
 import com.sd.oc.Service.ServiceInterface.TopoService;
-import com.sd.oc.Service.ServiceInterface.UtilisateurService;
 import com.sd.oc.model.TopoAPreter;
-import com.sd.oc.model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 @Controller
@@ -31,7 +27,7 @@ public class TopoController extends AbstractController{
     public String liste_topos(Model model){
 
         model.addAttribute("liste_topos", topoService.getAll());
-        return "liste_topos";
+        return "presentation/liste_topos";
     }
     @GetMapping("/addToMy_topos")
     public String add_topos(@RequestParam int topo_id){
@@ -62,7 +58,7 @@ public class TopoController extends AbstractController{
     public String liste_sites_par_topo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
-        return "liste_sites_par_topo";
+        return "presentation/liste_sites_par_topo";
     }
 
     @GetMapping("/emprunter_topo")
@@ -70,12 +66,12 @@ public class TopoController extends AbstractController{
 
         model.addAttribute("topo", topoService.get(topo_id));
         model.addAttribute("topoAPreter",new TopoAPreter());
-        return "emprunter_topo";
+        return "presentation/emprunter_topo";
     }
 
     @GetMapping("/mes_topos")
     public String liste_mes_topos(){
-        return "mes_topos";
+        return "presentation/mes_topos";
     }
 
     @GetMapping("/removeFromMy_topos")
@@ -101,6 +97,6 @@ public class TopoController extends AbstractController{
 
     @GetMapping("/mes_emprunts")
     public String liste_mes_emprunts(){
-        return "mes_emprunts";
+        return "presentation/mes_emprunts";
     }
 }

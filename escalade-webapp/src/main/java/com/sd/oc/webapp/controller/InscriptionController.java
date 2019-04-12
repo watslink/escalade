@@ -24,7 +24,7 @@ public class InscriptionController {
     @GetMapping("/inscription")
     public String inscription(Model model){
         model.addAttribute("utilisateur", new Utilisateur());
-        return "inscription";
+        return "acces/inscription";
     }
 
     @PostMapping("/inscription")

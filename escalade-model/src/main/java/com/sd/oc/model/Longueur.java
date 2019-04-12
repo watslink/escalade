@@ -28,16 +28,19 @@ public class Longueur {
     @Column(nullable = false)
     private int numero;
     @Column(nullable = false)
+    private int hauteur;
+    @Column(nullable = false)
     private int nombre_points;
     @ManyToOne
     @JoinColumn(name="voie_id")
     private Voie voie;
 
 
-    public Longueur(String description, String cotation, int numero, int nombre_points, Voie voie) {
+    public Longueur(String description, String cotation, int numero, int hauteur, int nombre_points, Voie voie) {
         this.description = description;
         this.cotation = cotation;
         this.numero = numero;
+        this.hauteur=hauteur;
         this.nombre_points = nombre_points;
         this.voie=voie;
     }
