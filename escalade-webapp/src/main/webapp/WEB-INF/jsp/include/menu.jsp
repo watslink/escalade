@@ -4,7 +4,8 @@
 <nav role="navigation" class="navbar">
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
-            </li>
+
+            <li> <a href="${pageContext.request.contextPath}/">Accueil</a></li>
             <li class="dropdown">
                 <a data-toggle="dropdown" href="#">Rechercher un site<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -21,9 +22,9 @@
                 </ul>
             </li>
         </ul>
-        <form action="logout" class="navbar-form navbar-right inline-form">
+        <form  class="navbar-form navbar-right inline-form">
             <span class="glyphicon glyphicon-user"> <security:authentication property="principal.username" /> </span>
-            <button type="submit"  class="btn btn-primary">Déconnexion</button>
+            <a href="${pageContext.request.contextPath}/logout" class="btn btn-danger"><span class="glyphicon glyphicon-off"></span> Déconnexion </a>
         </form>
     </div>
 </nav>

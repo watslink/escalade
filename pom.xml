@@ -183,6 +183,12 @@
         <artifactId>bootstrap-slider</artifactId>
         <version>10.0.2</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.webjars/datatables -->
+      <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>datatables</artifactId>
+        <version>1.10.19</version>
+      </dependency>
 
 
 

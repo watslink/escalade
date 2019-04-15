@@ -8,7 +8,7 @@
 
 <%@include file="../include/menu.jsp" %>
 <h1> Liste des secteurs du site: ${site.nom} </h1>
-<div class="container-fluid">
+<div class="container">
 
     <c:forEach items="${site.listSecteur}" var="secteur">
 
@@ -16,16 +16,16 @@
 
         <table  id="table" class="table table-striped ">
             <thead>
-            <tr class="row">
-                <th class="col-xs-6">Voie</th>
-                <th class="col-xs-3">Détails</th>
+            <tr >
+                <th>Voie</th>
+                <th>Détails</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${secteur.listVoie}" var="voie">
-                <tr class="row">
-                    <td class="col-xs-6"> ${voie.nom}</td>
-                    <td class="col-xs-3"><a href="${pageContext.request.contextPath}/details_voie?voie_id=${voie.voie_id}"
+                <tr >
+                    <td class=> ${voie.nom}</td>
+                    <td class=><a href="${pageContext.request.contextPath}/details_voie?voie_id=${voie.voie_id}"
                            class="btn btn-primary">Détails</a></td>
                 </tr>
             </c:forEach>

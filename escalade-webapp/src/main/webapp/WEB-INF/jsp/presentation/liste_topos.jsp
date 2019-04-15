@@ -10,12 +10,14 @@
 
 <h1> Liste des topos existants:</h1>
 <div class="container">
-    <table class="table table-striped">
+    <table class="table table-striped sorttable">
         <thead>
         <tr>
             <th>Nom</th>
             <th>Description</th>
-
+            <th class="nosort">Détails</th>
+            <th class="nosort">Ajouter</th>
+            <th class="nosort">Emprunter</th>
 
         </tr>
         </thead>
