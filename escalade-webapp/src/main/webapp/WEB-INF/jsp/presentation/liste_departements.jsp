@@ -10,12 +10,12 @@
 
 <h1> Départements:</h1>
 <div class="container">
-    <table id="table" class="table  table-striped">
+    <table id="table" class="table  table-striped sortTable">
         <thead>
         <tr>
             <th>N°</th>
             <th>Departement</th>
-            <th>Sites</th>
+            <th class="nosort">Sites</th>
         </tr>
         </thead>
 

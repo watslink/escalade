@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 @Controller
@@ -96,7 +97,8 @@ public class TopoController extends AbstractController{
 
 
     @GetMapping("/mes_emprunts")
-    public String liste_mes_emprunts(){
+    public String liste_mes_emprunts(Model model){
+        model.addAttribute("now", new Date());
         return "presentation/mes_emprunts";
     }
 }

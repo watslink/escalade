@@ -43,6 +43,7 @@ public class ConfigurationDAO {
         dataSource.setUrl(url);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
+        dataSource.setConnectionProperties("useUnicode=true;characterEncoding=UTF-8");
 
         return dataSource;
     }
@@ -66,6 +67,7 @@ public class ConfigurationDAO {
     public Properties hibernateProperties() {
         Properties hibernateProp = new Properties();
         hibernateProp.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+        hibernateProp.put("hibernate.connection.CharSet", "utf-8");
         return hibernateProp;
     }
 

@@ -31,6 +31,7 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
                 "select pseudo, mot_de_passe, enabled from utilisateur where pseudo=?")
                 .authoritiesByUsernameQuery(
                         "select pseudo, role from utilisateur where pseudo=?");
+
     }
 
     @Override

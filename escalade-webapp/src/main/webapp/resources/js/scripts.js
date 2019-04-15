@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.table').dataTable( {
+    $('.sortTable').dataTable( {
         language:{
             "sProcessing":     "Traitement en cours...",
             "sSearch":         "Rechercher&nbsp;:",

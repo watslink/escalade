@@ -9,6 +9,15 @@
 <%@include file="../include/menu.jsp" %>
 <h1> Liste des sites du département: ${departement.nom} ${departement.code}</h1>
 <div class="container">
+    <form:form class="form-inline" action="addSite" method="post" modelAttribute="site">
+        <div class="form-group mx-sm-3 mb-2">
+            <form:input type="text" class="form-control" minlength="3" id="nom" path="nom" placeholder="Nom" required="true"/>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <form:input type="text" class="form-control" id="ville" path="ville" placeholder="Ville" required="true"/>
+        </div>
+        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
+    </form:form>
     <table id="table" class="table table-striped">
         <thead>
         <tr>

@@ -5,10 +5,11 @@
 <%@include file="../include/head.jsp" %>
 <body>
 <%@include file="../include/header.jsp" %>
-<div class="container marginForm">
-    <div class="row centered-form">
+
+<div class="container">
+    <div class="row centered-form marginForm ">
         <div class="col-xs-12 col-sm-8  col-sm-offset-2 c">
-            <div class="panel panel-default">
+            <div class="panel panel-default ">
                 <div class="panel-heading">
                     <c:if test="${param.error != null}">
                         <div class="alert alert-danger">

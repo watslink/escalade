@@ -26,3 +26,25 @@
     background-color: #dedede;
 }
 
+.accueil{
+    text-align: center;
+    margin:20px;
+}
+
+.img-accueil{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+h1{
+    text-align: center;
+    color: #4995ba;
+    size: 2em;
+}
+.table{
+    padding-left: 80px;
+    padding-right: 80px;
+}

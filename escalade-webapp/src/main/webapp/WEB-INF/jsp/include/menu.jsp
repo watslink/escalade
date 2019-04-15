@@ -7,7 +7,7 @@
 
             <li> <a href="${pageContext.request.contextPath}/">Accueil</a></li>
             <li class="dropdown">
-                <a data-toggle="dropdown" href="#">Rechercher un site<b class="caret"></b></a>
+                <a data-toggle="dropdown" href="#">Gestion des sites<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="${pageContext.request.contextPath}/liste_departements">Liste par département</a></li>
                     <li><a href="${pageContext.request.contextPath}/recherche_multi">Recherche par critères</a></li>
