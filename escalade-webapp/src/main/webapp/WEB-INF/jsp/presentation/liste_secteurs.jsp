@@ -20,7 +20,8 @@
         <button type="submit" class="btn btn-success mb-2">Ajouter</button>
     </form:form>
     <c:forEach items="${site.listSecteur}" var="secteur">
-        <h3>Secteur : ${secteur.nom}</h3>
+        <h3>Secteur : ${secteur.nom} <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_secteur?secteur_id=${secteur.secteur_id}"
+        ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a></h3>
         <table  id="table" class="table table-striped ">
             <thead>
             <tr >

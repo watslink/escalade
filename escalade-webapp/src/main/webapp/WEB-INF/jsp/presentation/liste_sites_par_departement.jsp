@@ -36,7 +36,7 @@
                 <td class="col-xs-4">${site.ville}</td>
                 <td class="col-xs-3"><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
                        class="btn btn-primary">Détails</a>
-                    <a data-confirm="Confirmer Supression?" href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"
+                    <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"
                        ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a>
 
                 </td>
