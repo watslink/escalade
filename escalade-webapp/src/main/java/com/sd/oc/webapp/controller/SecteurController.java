@@ -16,7 +16,7 @@ public class SecteurController {
 
 
     @Autowired
-    SecteurService secteurService;
+    private SecteurService secteurService;
 
     @Autowired
     private SiteService siteService;

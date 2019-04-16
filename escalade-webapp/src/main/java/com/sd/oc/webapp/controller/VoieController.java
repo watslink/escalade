@@ -1,10 +1,13 @@
 package com.sd.oc.webapp.controller;
 
 import com.sd.oc.Service.ServiceInterface.CommentaireService;
+import com.sd.oc.Service.ServiceInterface.SecteurService;
 import com.sd.oc.Service.ServiceInterface.UtilisateurService;
 import com.sd.oc.Service.ServiceInterface.VoieService;
 import com.sd.oc.model.Commentaire;
+import com.sd.oc.model.Secteur;
 import com.sd.oc.model.Utilisateur;
+import com.sd.oc.model.Voie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +21,9 @@ public class VoieController {
 
     @Autowired
     private VoieService voieService;
+
+    @Autowired
+    private SecteurService secteurService;
 
     @Autowired
     private CommentaireService commentaireService;
@@ -44,6 +50,22 @@ public class VoieController {
         commentaireService.add(commentaire);
 
         return "redirect:/details_voie?voie_id="+voie_id;
+    }
+
+    @PostMapping("/ajouter_voie")
+    public String addVoie(@RequestParam int secteur_id,
+                             @RequestParam String nomVoie){
+        Secteur secteur=secteurService.get(secteur_id);
+        Voie voie=new Voie(nomVoie, secteur);
+        voieService.add(voie);
+        return "redirect:/liste_secteurs?site_id="+secteur.getSite().getSite_id();
+    }
+
+    @GetMapping("/supprimer_voie")
+    public String deleteVoie(@RequestParam int voie_id){
+        Voie voie=voieService.get(voie_id);
+        voieService.remove(voie_id);
+        return "redirect:/liste_secteurs?site_id="+voie.getSecteur().getSite().getSite_id();
     }
 }
 
