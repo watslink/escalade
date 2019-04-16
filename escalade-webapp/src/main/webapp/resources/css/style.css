@@ -44,6 +44,10 @@ h1{
     color: #4995ba;
     size: 2em;
 }
+
+h4{
+    text-align: center;
+}
 .table{
     padding-left: 80px;
     padding-right: 80px;

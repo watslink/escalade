@@ -2,12 +2,13 @@ package com.sd.oc.webapp.controller;
 
 import com.sd.oc.Service.ServiceInterface.DepartementService;
 import com.sd.oc.Service.ServiceInterface.SiteService;
+import com.sd.oc.Service.ServiceInterface.TopoService;
+import com.sd.oc.model.Secteur;
 import com.sd.oc.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,6 +22,9 @@ public class SiteController {
 
     @Autowired
     private DepartementService departementService;
+
+    @Autowired
+    private TopoService topoService;
 
     @GetMapping("/liste_secteurs")
     public String listeSitesParTopo(@RequestParam int site_id, Model model){
@@ -44,4 +48,6 @@ public class SiteController {
         siteService.remove(site_id);
         return "redirect:/liste_sites_par_departement?code_departement="+site.getDepartement().getCode();
     }
+
+
 }

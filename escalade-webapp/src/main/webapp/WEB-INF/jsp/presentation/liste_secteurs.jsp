@@ -7,13 +7,20 @@
 <%@include file="../include/header.jsp" %>
 
 <%@include file="../include/menu.jsp" %>
-<h1> Liste des secteurs du site: ${site.nom} </h1>
-<div class="container">
-
+<h1> Secteurs: </h1>
+<h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}"> ${site.departement.nom} ${site.departement.code}</a> /
+ Site: <a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"> ${site.nom} </a></h4>
+<div class="container-fluid">
+    <form:form class="form-inline text-center" action="ajouter_secteur" method="post" >
+        <label>Ajouter un secteur:</label>
+        <div class="form-group ">
+            <input type="text" class="form-control" minlength="3" id="nom" name="nom" placeholder="Nom" required>
+        </div>
+        <input type="text" hidden id="site_id" name="site_id" value="${site.site_id}">
+        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
+    </form:form>
     <c:forEach items="${site.listSecteur}" var="secteur">
-
         <h3>Secteur : ${secteur.nom}</h3>
-
         <table  id="table" class="table table-striped ">
             <thead>
             <tr >
@@ -30,12 +37,8 @@
                 </tr>
             </c:forEach>
             </tbody>
-
         </table>
-
     </c:forEach>
-
-
 </div>
 <%@include file="../include/footer.jsp" %>
 </body>

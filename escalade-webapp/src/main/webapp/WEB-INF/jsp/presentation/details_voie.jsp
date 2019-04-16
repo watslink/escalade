@@ -9,10 +9,6 @@
 <%@include file="../include/menu.jsp" %>
 <h1> Voie: ${voie.nom} </h1>
 <div class="container-fluid">
-
-
-
-
         <table  id="table" class="table table-striped ">
             <thead>
             <tr class="row">

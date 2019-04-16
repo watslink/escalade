@@ -33,6 +33,12 @@ public class Site {
     @OneToMany(mappedBy ="site", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Secteur> listSecteur;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="topo_sites",
+            joinColumns={@JoinColumn(name="site_id")},
+            inverseJoinColumns={@JoinColumn(name="topo_id")})
+    private Set<Topo> listTopo;
+
     public Site(String nom, Departement departement, String ville) {
         this.nom = nom;
         this.departement = departement;

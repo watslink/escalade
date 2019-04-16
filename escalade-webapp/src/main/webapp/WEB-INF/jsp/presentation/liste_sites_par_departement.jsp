@@ -6,8 +6,9 @@
 <body>
 <%@include file="../include/header.jsp" %>
 <%@include file="../include/menu.jsp" %>
-<h1> Liste des sites du département: ${departement.nom} ${departement.code}</h1>
-<div class="container">
+<h1> Sites: </h1>
+<h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}"> ${departement.nom} ${departement.code}</a></h4>
+<div class="container-fluid">
     <form:form class="form-inline text-center" action="ajouter_site" method="post" >
         <label>Ajouter un site:</label>
         <div class="form-group ">
@@ -35,38 +36,16 @@
                 <td class="col-xs-4">${site.ville}</td>
                 <td class="col-xs-3"><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
                        class="btn btn-primary">Détails</a>
-                    <a href="#delete" data-toggle="modal"
+                    <a data-confirm="Confirmer Supression?" href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"
                        ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a>
 
                 </td>
             </tr>
 
-            <div class="modal" id="delete">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">x</button>
-                            <h4 class="modal-title">Suppression</h4>
-                        </div>
-                        <div class="modal-body">
-                            Confirmer la suppression?
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-danger" href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"
-                            >Supprimer</a>
-                            <button class="btn btn-info" data-dismiss="modal">Annuler</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </c:forEach>
         </tbody>
     </table>
 </div>
-
-
-
 <%@include file="../include/footer.jsp" %>
-
 </body>
 </html>

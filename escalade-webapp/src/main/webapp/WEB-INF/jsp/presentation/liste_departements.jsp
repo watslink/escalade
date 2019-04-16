@@ -9,7 +9,7 @@
 <%@include file="../include/menu.jsp" %>
 
 <h1> Départements:</h1>
-<div class="container">
+<div class="container-fluid">
     <table id="table" class="table  table-striped sortTable">
         <thead>
         <tr>

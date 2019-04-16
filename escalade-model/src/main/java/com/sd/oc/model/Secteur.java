@@ -33,10 +33,9 @@ public class Secteur {
     @OneToMany(mappedBy ="secteur", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Voie> listVoie;
 
-    public Secteur(String nom, Site site, Set<Voie> listVoie) {
+    public Secteur(String nom, Site site) {
         this.nom = nom;
         this.site = site;
-        this.listVoie=listVoie;
     }
 
     public Secteur() {
