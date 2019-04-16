@@ -29,7 +29,6 @@ public class DepartementController {
     public String liste_site_par_departement(@RequestParam String code_departement, Model model){
 
         model.addAttribute("departement", departementService.get(code_departement));
-        model.addAttribute("site", new Site());
         return "presentation/liste_sites_par_departement";
     }
 

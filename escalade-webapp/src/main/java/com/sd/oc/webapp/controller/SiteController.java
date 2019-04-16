@@ -1,5 +1,6 @@
 package com.sd.oc.webapp.controller;
 
+import com.sd.oc.Service.ServiceInterface.DepartementService;
 import com.sd.oc.Service.ServiceInterface.SiteService;
 import com.sd.oc.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +19,29 @@ public class SiteController {
     @Autowired
     private SiteService siteService;
 
+    @Autowired
+    private DepartementService departementService;
+
     @GetMapping("/liste_secteurs")
-    public String liste_sites_par_topo(@RequestParam int site_id, Model model){
+    public String listeSitesParTopo(@RequestParam int site_id, Model model){
 
         model.addAttribute("site", siteService.get(site_id));
         return "presentation/liste_secteurs";
     }
 
-    @PostMapping("/liste_sites_par_departement")
-    public String addSite(@ModelAttribute Site site){
+    @PostMapping("/ajouter_site")
+    public String addSite(@RequestParam String departement_code,
+                          @RequestParam String ville,
+                          @RequestParam String nom){
+        Site site = new Site(nom, departementService.get(departement_code), ville);
         siteService.add(site);
-        return "redirect:/liste_sites_par_departement";
+        return "redirect:/liste_sites_par_departement?code_departement="+departement_code;
+    }
+
+    @GetMapping("/supprimer_site")
+    public String deleteSite(@RequestParam int site_id, Model model){
+        Site site=siteService.get(site_id);
+        siteService.remove(site_id);
+        return "redirect:/liste_sites_par_departement?code_departement="+site.getDepartement().getCode();
     }
 }

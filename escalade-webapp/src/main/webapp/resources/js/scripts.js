@@ -61,3 +61,4 @@ $(function () {
         todayHighlight: true
     });
 });
+
