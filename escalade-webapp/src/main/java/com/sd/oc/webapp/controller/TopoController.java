@@ -25,13 +25,13 @@ public class TopoController extends AbstractController{
     private TopoAPreterService topoAPreterService;
 
     @GetMapping("/liste_topos")
-    public String liste_topos(Model model){
+    public String listeTopos(Model model){
 
         model.addAttribute("liste_topos", topoService.getAll());
         return "presentation/liste_topos";
     }
     @GetMapping("/addToMy_topos")
-    public String add_topos(@RequestParam int topo_id){
+    public String addTopos(@RequestParam int topo_id){
 
         TopoAPreter topoAPreter=new TopoAPreter(true, getUtilisateurConnecte(),topoService.get(topo_id));
         topoAPreterService.update(topoAPreter);
@@ -40,7 +40,7 @@ public class TopoController extends AbstractController{
     }
 
     @PostMapping("/addToMy_toposEmpruntes")
-    public String add_emprunt(@RequestParam int topoAPreter_id, @RequestParam String date){
+    public String addEmprunt(@RequestParam int topoAPreter_id, @RequestParam String date){
 
         TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
         topoAPreter.setUtilisateurEmprunteur(getUtilisateurConnecte());
@@ -56,14 +56,14 @@ public class TopoController extends AbstractController{
     }
 
     @GetMapping("/liste_sites_par_topo")
-    public String liste_sites_par_topo(@RequestParam int topo_id, Model model){
+    public String listeSitesParTopo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
         return "presentation/liste_sites_par_topo";
     }
 
     @GetMapping("/emprunter_topo")
-    public String emprunter_topo(@RequestParam int topo_id, Model model){
+    public String emprunterTopo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
         model.addAttribute("topoAPreter",new TopoAPreter());
@@ -71,7 +71,7 @@ public class TopoController extends AbstractController{
     }
 
     @GetMapping("/mes_topos")
-    public String liste_mes_topos(){
+    public String listeMesTopos(){
         return "presentation/mes_topos";
     }
 
@@ -84,7 +84,7 @@ public class TopoController extends AbstractController{
     }
 
     @GetMapping("/removeFromMy_emprunts")
-    public String remove_emprunt(@RequestParam int topoAPreter_id){
+    public String removeEmprunt(@RequestParam int topoAPreter_id){
 
         TopoAPreter topoAPreter=topoAPreterService.get(topoAPreter_id);
         topoAPreter.setUtilisateurEmprunteur(null);

@@ -20,6 +20,7 @@
         <button type="submit" class="btn btn-success mb-2">Ajouter</button>
     </form:form>
     <c:forEach items="${site.listSecteur}" var="secteur">
+        <div class="secteur">
         <h3>Secteur : ${secteur.nom} <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_secteur?secteur_id=${secteur.secteur_id}"
         ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a></h3>
         <table  id="table" class="table table-striped ">
@@ -49,6 +50,7 @@
             <input type="text" hidden id="secteur_id" name="secteur_id" value="${secteur.secteur_id}">
             <button type="submit" class="btn btn-success mb-2">Ajouter</button>
         </form:form>
+        </div>
     </c:forEach>
 </div>
 <%@include file="../include/footer.jsp" %>

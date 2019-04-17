@@ -17,7 +17,7 @@ import java.util.Date;
 
 @Controller
 
-public class VoieController {
+public class VoieController extends AbstractController{
 
     @Autowired
     private VoieService voieService;
@@ -41,11 +41,10 @@ public class VoieController {
 
     @PostMapping("/details_voie")
     public String commenter_voie(@ModelAttribute Commentaire commentaire,
-                                 @RequestParam int voie_id,
-                                 @SessionAttribute("utilisateurConnecte") Utilisateur utilisateur
+                                 @RequestParam int voie_id
                                  ){
         commentaire.setDate(new Date());
-        commentaire.setUtilisateur(utilisateur);
+        commentaire.setUtilisateur(getUtilisateurConnecte());
         commentaire.setVoie(voieService.get(voie_id));
         commentaireService.add(commentaire);
 

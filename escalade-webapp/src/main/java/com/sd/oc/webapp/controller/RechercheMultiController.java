@@ -19,13 +19,13 @@ public class RechercheMultiController {
 
 
     @GetMapping("/recherche_multi")
-    public String getRecheche_multi(){
+    public String getRechecheMulti(){
         return "presentation/recherche_multi";
     }
 
 
     @PostMapping("/recherche_multi")
-    public String recherche_multi(@RequestParam String cotation,
+    public String rechercheMulti(@RequestParam String cotation,
                                   @RequestParam int[] nombre_points,
                                   @RequestParam int[] hauteur,
                                   @RequestParam String code_departement,@RequestParam String ville,

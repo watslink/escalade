@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class SecteurController {
+public class SecteurController extends AbstractController{
 
 
     @Autowired

@@ -19,14 +19,14 @@ public class DepartementController {
 
 
     @GetMapping("/liste_departements")
-    public String liste_departements(Model model) {
+    public String listeDepartements(Model model) {
 
         model.addAttribute("liste_departements", departementService.getAll());
         return "presentation/liste_departements";
     }
 
     @GetMapping("/liste_sites_par_departement")
-    public String liste_site_par_departement(@RequestParam String code_departement, Model model){
+    public String listeSiteParDepartement(@RequestParam String code_departement, Model model){
 
         model.addAttribute("departement", departementService.get(code_departement));
         return "presentation/liste_sites_par_departement";
