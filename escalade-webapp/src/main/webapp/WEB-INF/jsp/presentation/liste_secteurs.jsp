@@ -11,14 +11,34 @@
 <h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}"> ${site.departement.nom} ${site.departement.code}</a> /
  Site: <a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"> ${site.nom} </a></h4>
 <div class="container-fluid">
-    <form:form class="form-inline text-center" action="ajouter_secteur" method="post" >
-        <label>Ajouter un secteur:</label>
-        <div class="form-group ">
-            <input type="text" class="form-control" minlength="3" id="nom" name="nom" placeholder="Nom" required>
+    <div class="text-center">
+        <button data-toggle="modal" href="#ajouterSecteur" class="btn btn-success">Ajouter un secteur</button>
+    </div>
+    <div class="modal" id="ajouterSecteur">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h4 class="modal-title">Ajouter un secteur</h4>
+                </div>
+                <div class="modal-body">
+                    <form:form class="form-horizontal text-center" action="ajouter_secteur" method="post" >
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nom">Nom</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control col-md-4" minlength="3" id="nom" name="nom"  required>
+                                </div>
+                            </div>
+                        <input type="text" hidden id="site_id" name="site_id" value="${site.site_id}">
+                        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
+                        </fieldset>
+                    </form:form>
+                </div>
+            </div>
         </div>
-        <input type="text" hidden id="site_id" name="site_id" value="${site.site_id}">
-        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
-    </form:form>
+    </div>
+
     <c:forEach items="${site.listSecteur}" var="secteur">
         <div class="secteur">
         <h3>Secteur : ${secteur.nom} <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_secteur?secteur_id=${secteur.secteur_id}"
@@ -42,14 +62,35 @@
             </c:forEach>
             </tbody>
         </table>
-        <form:form class="form-inline text-center" action="ajouter_voie" method="post" >
-            <label>Ajouter une voie:</label>
-            <div class="form-group ">
-                <input type="text" class="form-control" minlength="3" id="nomVoie" name="nomVoie" placeholder="Nom" required>
+            <div class="text-center">
+                <button data-toggle="modal" href="#ajouterVoie" class="btn btn-success">Ajouter une voie</button>
             </div>
-            <input type="text" hidden id="secteur_id" name="secteur_id" value="${secteur.secteur_id}">
-            <button type="submit" class="btn btn-success mb-2">Ajouter</button>
-        </form:form>
+            <div class="modal" id="ajouterVoie">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                            <h4 class="modal-title">Ajouter une voie</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form:form class="form-horizontal text-center" action="ajouter_voie" method="post" >
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="nomVoie">Nom</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control col-md-4" minlength="3" id="nomVoie" name="nomVoie"  required>
+                                    </div>
+                                </div>
+                                <input type="text" hidden id="secteur_id" name="secteur_id" value="${secteur.secteur_id}">
+                                <button type="submit" class="btn btn-success mb-2">Ajouter</button>
+                            </fieldset>
+                            </form:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </c:forEach>
 </div>

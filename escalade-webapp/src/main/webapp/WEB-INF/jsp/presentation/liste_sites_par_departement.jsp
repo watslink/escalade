@@ -9,17 +9,40 @@
 <h1> Sites: </h1>
 <h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}"> ${departement.nom} ${departement.code}</a></h4>
 <div class="container-fluid">
-    <form:form class="form-inline text-center" action="ajouter_site" method="post" >
-        <label>Ajouter un site:</label>
-        <div class="form-group ">
-            <input type="text" class="form-control" minlength="3" id="nom" name="nom" placeholder="Nom" required>
+    <div class="text-center">
+        <button data-toggle="modal" href="#ajouter" class="btn btn-success">Ajouter un Site</button>
+    </div>
+    <div class="modal" id="ajouter">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h4 class="modal-title">Ajouter un site</h4>
+                </div>
+                <div class="modal-body">
+                    <form:form class="form-horizontal text-center" action="ajouter_site" method="post" >
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nom">Nom</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" minlength="3" id="nom" name="nom" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="ville">Ville</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control"  id="ville" name="ville" required>
+                                </div>
+                            </div>
+                        <input type="text" hidden id="departement_code" name="departement_code" value="${departement.code}">
+                        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
+                        </fieldset>
+                    </form:form>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <input type="text" class="form-control"  id="ville" name="ville" placeholder="Ville" required>
-        </div>
-        <input type="text" hidden id="departement_code" name="departement_code" value="${departement.code}">
-        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
-    </form:form>
+    </div>
+
     <table id="table" class="table table-striped sortTable">
         <thead>
         <tr>
