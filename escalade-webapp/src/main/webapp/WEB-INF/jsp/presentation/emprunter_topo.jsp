@@ -9,7 +9,7 @@
 <%@include file="../include/menu.jsp" %>
 
 <div class="container-fluid">
-    <h1> ${topo.nom} </h1>
+    <h1> Topo: ${topo.nom} </h1>
     <h4> Utilisateurs propriétaires: </h4>
     <table id="table1" class="table table-striped sortTable">
         <thead>
