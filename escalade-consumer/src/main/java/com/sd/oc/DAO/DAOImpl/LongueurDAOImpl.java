@@ -16,7 +16,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class LongeurDAOImpl extends GenericDAOImpl<Longueur, Integer> implements LongueurDAO {
+public class LongueurDAOImpl extends GenericDAOImpl<Longueur, Integer> implements LongueurDAO {
 
     public List<Longueur> getListFromCriteria(String cotation, int nombre_points_min,int nombre_points_max,
                                               int hauteur_min, int hauteur_max, String code_departement,
