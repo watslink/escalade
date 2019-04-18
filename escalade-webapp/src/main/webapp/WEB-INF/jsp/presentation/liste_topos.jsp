@@ -12,27 +12,27 @@
 <div class="container">
     <table class="table table-striped sorttable">
         <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Description</th>
-            <th class="nosort">Détails</th>
-            <th class="nosort">Ajouter</th>
-            <th class="nosort">Emprunter</th>
-
+        <tr class="row">
+            <th class="col-xs-3">Nom</th>
+            <th class="col-xs-5">Description</th>
+            <th class="nosort col-xs-4">Action</th>
         </tr>
         </thead>
 
         <tbody>
         <c:forEach items="${liste_topos}" var="topo">
-            <tr>
-                <td>${topo.nom}</td>
-                <td>${topo.description}</td>
-                <td><a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topo.topo_id}"
-                       class="btn btn-primary">Détails</a></td>
-                <td><a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}"
-                      class="btn btn-primary">Ajouter</a></td>
-                <td><a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"
-                       class="btn btn-primary">Emprunter</a></td>
+            <tr class="row">
+                <td class="col-xs-3">${topo.nom}</td>
+                <td class="col-xs-5">${topo.description}</td>
+                <td class="col-xs-4">
+                    <a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topo.topo_id}"
+                       class="btn btn-primary">Détails</a>
+                    <a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Mes topos</a>
+                    <c:if test="${not empty topo.listTopoAPreter}">
+                    <a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"
+                       class="btn btn-warning">Emprunter</a>
+                    </c:if>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
