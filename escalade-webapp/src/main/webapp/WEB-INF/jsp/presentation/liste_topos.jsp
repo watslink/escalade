@@ -30,6 +30,8 @@
                     <a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Mes topos</a>
                     <a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"
                        class="btn btn-warning">Emprunter</a>
+                    <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_topo?topo_id=${topo.topo_id}"
+                    ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a>
                 </td>
             </tr>
         </c:forEach>

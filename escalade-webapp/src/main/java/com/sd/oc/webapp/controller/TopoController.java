@@ -2,6 +2,7 @@ package com.sd.oc.webapp.controller;
 
 import com.sd.oc.Service.ServiceInterface.TopoAPreterService;
 import com.sd.oc.Service.ServiceInterface.TopoService;
+import com.sd.oc.model.Topo;
 import com.sd.oc.model.TopoAPreter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -99,5 +100,19 @@ public class TopoController extends AbstractController{
     public String liste_mes_emprunts(Model model){
         model.addAttribute("now", new Date());
         return "presentation/mes_emprunts";
+    }
+
+    @PostMapping("/ajouter_topo")
+    public String addTopo(@RequestParam int secteur_id,
+                          @RequestParam String nomVoie){
+        return "redirect:/liste_topos";
+    }
+
+    @GetMapping("/supprimer_topo")
+    public String deleteTopo(@RequestParam int topo_id){
+
+
+        topoService.remove(topo_id);
+        return "redirect:/liste_topos";
     }
 }

@@ -25,7 +25,11 @@ public class Topo {
 
     @Column
     private String description;
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "listTopo")
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="topo_sites",
+            joinColumns={@JoinColumn(name="topo_id")},
+            inverseJoinColumns={@JoinColumn(name="site_id")})
     private Set<Site> listSite;
 
     @OneToMany(mappedBy ="topoReference", orphanRemoval = true)
