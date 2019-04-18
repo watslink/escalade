@@ -28,7 +28,7 @@
             <c:forEach items="${listToposARendre}" var="topoAPreter">
                 <tr>
                     <td>${topoAPreter.topoReference.nom}</td>
-                    <td><a href="mailto:${utilisateurConnecte.mail}">${topoAPreter.utilisateurProprietaire.pseudo}</a></td>
+                    <td><a href="mailto:${topoAPreter.utilisateurProprietaire.mail}">${topoAPreter.utilisateurProprietaire.pseudo}</a></td>
                 </tr>
             </c:forEach>
             </tbody>

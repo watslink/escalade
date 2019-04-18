@@ -28,10 +28,8 @@
                     <a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topo.topo_id}"
                        class="btn btn-primary">Détails</a>
                     <a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Mes topos</a>
-                    <c:if test="${not empty topo.listTopoAPreter}">
                     <a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"
                        class="btn btn-warning">Emprunter</a>
-                    </c:if>
                 </td>
             </tr>
         </c:forEach>

@@ -74,6 +74,15 @@ h4{
 }
 
 .btn{
-    margin-right: 5px;
-    margin-bottom: 3px;
+    margin:1px;
 }
+
+.paddingleft{
+    padding-left: 30px;
+}
+
+.input-group.date.datepicker
+{
+    padding:1px;
+}
+
