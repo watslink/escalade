@@ -7,7 +7,7 @@
 <%@include file="../include/header.jsp" %>
 
 <%@include file="../include/menu.jsp" %>
-<h1> Voie: ${voie.nom} </h1>
+<h1> Longueurs de la voie: ${voie.nom} </h1>
 <h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${voie.secteur.site.departement.code}"> ${voie.secteur.site.departement.nom} ${voie.secteur.site.departement.code}</a> /
     Site: <a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${voie.secteur.site.site_id}"> ${voie.secteur.site.nom}</a> /
  Secteur: ${voie.secteur.nom}</h4>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="hauteur">Hauteur</label>
+                                <label class="col-md-4 control-label" for="hauteur">Hauteur (m)</label>
                                 <div class="col-md-4">
                                     <form:input id="hauteur" path="hauteur" type="number" placeholder="" class="form-control input-md" required="true"/>
                                 </div>
