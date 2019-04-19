@@ -7,17 +7,66 @@
 <%@include file="../include/header.jsp" %>
 
 <%@include file="../include/menu.jsp" %>
-<h1> Liste des sites </h1>
+<h1> Sites du topo: ${topo.nom} </h1>
 <div class="container">
-    <h1> ${topo.nom} </h1>
+    <div class="text-center">
+        <button data-toggle="modal" href="#gererSites" class="btn btn-success">Gérer les Sites</button>
+    </div>
+    <div class="modal" id="gererSites">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h4 class="modal-title">Mettre à jour les sites du topo: ${topo.nom}</h4>
+                </div>
+                <div class="modal-body">
+                    <form:form class="form-horizontal text-center" action="update_sites_topo" method="post">
+                        <fieldset>
+                            <table id="table" class="table table-condensed sortTable">
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Departement</th>
+                                    <th>Ville</th>
+                                    <th>dans le topo?</th>
+                                </tr>
+                                </thead>
 
-    <h2> Liste des sites </h2>
-    <table id="table2" class="table table-striped">
+                                <tbody>
+                                <c:forEach items="${listSites}" var="site">
+                                    <tr>
+                                        <td>${site.nom}</td>
+                                        <td>
+                                            <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}">
+                                                    ${site.departement.nom}(${site.departement.code})
+                                            </a>
+                                        </td>
+                                        <td>${site.ville}</td>
+                                        <c:if test="${topo.listSite.contains(site)}">
+                                            <td><input type="checkbox" name="listSite_id" value="${site.site_id}" checked></td>
+                                        </c:if>
+                                        <c:if test="${!topo.listSite.contains(site)}">
+                                            <td><input type="checkbox" name="listSite_id" value="${site.site_id}"></td>
+                                        </c:if>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                            <input type="text" hidden id="topo_id" name="topo_id" value="${topo.topo_id}">
+                            <button type="submit" class="btn btn-success mb-2">Mettre à jour</button>
+                        </fieldset>
+                    </form:form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table id="table2" class="table table-striped sortTable">
         <thead>
         <tr>
             <th>Nom</th>
+            <th>Département</th>
             <th>Ville</th>
-            <th>Détails</th>
+            <th class="nosort">Détails</th>
         </tr>
         </thead>
 
@@ -25,6 +74,11 @@
         <c:forEach items="${topo.listSite}" var="site">
             <tr>
                 <td>${site.nom}</td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}">
+                    ${site.departement.nom}(${site.departement.code})
+                    </a>
+                </td>
                 <td>${site.ville}</td>
                 <td><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
                        class="btn btn-primary">Détails</a></td>

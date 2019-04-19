@@ -1,7 +1,9 @@
 package com.sd.oc.webapp.controller;
 
+import com.sd.oc.Service.ServiceInterface.SiteService;
 import com.sd.oc.Service.ServiceInterface.TopoAPreterService;
 import com.sd.oc.Service.ServiceInterface.TopoService;
+import com.sd.oc.model.Site;
 import com.sd.oc.model.Topo;
 import com.sd.oc.model.TopoAPreter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -23,12 +26,16 @@ public class TopoController extends AbstractController{
     private TopoService topoService;
 
     @Autowired
+    private SiteService siteService;
+
+    @Autowired
     private TopoAPreterService topoAPreterService;
 
     @GetMapping("/liste_topos")
     public String listeTopos(Model model){
 
         model.addAttribute("liste_topos", topoService.getAll());
+        model.addAttribute("topo", new Topo());
         return "presentation/liste_topos";
     }
     @GetMapping("/addToMy_topos")
@@ -60,6 +67,7 @@ public class TopoController extends AbstractController{
     public String listeSitesParTopo(@RequestParam int topo_id, Model model){
 
         model.addAttribute("topo", topoService.get(topo_id));
+        model.addAttribute("listSites", siteService.getAll());
         return "presentation/liste_sites_par_topo";
     }
 
@@ -103,16 +111,29 @@ public class TopoController extends AbstractController{
     }
 
     @PostMapping("/ajouter_topo")
-    public String addTopo(@RequestParam int secteur_id,
-                          @RequestParam String nomVoie){
+    public String addTopo(@ModelAttribute Topo topo){
+        topoService.add(topo);
         return "redirect:/liste_topos";
     }
 
     @GetMapping("/supprimer_topo")
     public String deleteTopo(@RequestParam int topo_id){
 
-
         topoService.remove(topo_id);
         return "redirect:/liste_topos";
     }
+
+    @PostMapping("/update_sites_topo")
+    public String updateSitesTopo(@RequestParam(required=false) List<Integer> listSite_id, @RequestParam int topo_id){
+        Topo topo = topoService.get(topo_id);
+        topo.getListSite().clear();
+        if(listSite_id!=null) {
+            for (int site_id : listSite_id) {
+                Site site = siteService.get(site_id);
+                topo.getListSite().add(site);
+            }
+        }
+        topoService.update(topo);
+        return "redirect:/liste_sites_par_topo?topo_id="+topo_id;
+}
 }

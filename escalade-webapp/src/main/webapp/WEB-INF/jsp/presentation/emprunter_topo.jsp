@@ -21,6 +21,9 @@
 
         <tbody>
         <c:forEach items="${topo.listTopoAPreter}" var="topoAPreter">
+            <c:if test="${utilisateurConnecte.equals(topoAPreter.utilisateurProprietaire)}">
+                <h4> Je posséde ce topo</h4>
+            </c:if>
             <c:if test="${!utilisateurConnecte.equals(topoAPreter.utilisateurProprietaire)}">
             <tr class="row">
                 <td class="col-xs-5"><a href="mailto:${topoAPreter.utilisateurProprietaire.mail}">${topoAPreter.utilisateurProprietaire.pseudo}</a></td>
