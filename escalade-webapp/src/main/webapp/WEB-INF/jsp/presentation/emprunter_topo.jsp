@@ -22,7 +22,11 @@
         <tbody>
         <c:forEach items="${topo.listTopoAPreter}" var="topoAPreter">
             <c:if test="${utilisateurConnecte.equals(topoAPreter.utilisateurProprietaire)}">
-                <h4> Je posséde ce topo</h4>
+                <tr class="row">
+                    <td class="col-xs-5"><strong>Moi</strong></td>
+                    <td class="col-xs-7"> <a href="${pageContext.request.contextPath}/mes_topos" class="btn btn-success">Mes topos</a>
+                    </td>
+                </tr>
             </c:if>
             <c:if test="${!utilisateurConnecte.equals(topoAPreter.utilisateurProprietaire)}">
             <tr class="row">

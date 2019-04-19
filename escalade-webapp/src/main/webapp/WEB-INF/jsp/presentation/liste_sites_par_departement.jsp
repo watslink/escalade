@@ -28,10 +28,10 @@
                                     <input type="text" class="form-control" minlength="3" id="nom" name="nom" required>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div  class="form-group ">
                                 <label class="col-md-4 control-label" for="ville">Ville</label>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control"  id="ville" name="ville" required>
+                                <div class="col-md-4 ">
+                                    <input  type="text" class="form-control"  id="ville" name="ville" required>
                                 </div>
                             </div>
                         <input type="text" hidden id="departement_code" name="departement_code" value="${departement.code}">
@@ -70,5 +70,7 @@
     </table>
 </div>
 <%@include file="../include/footer.jsp" %>
+
+
 </body>
 </html>

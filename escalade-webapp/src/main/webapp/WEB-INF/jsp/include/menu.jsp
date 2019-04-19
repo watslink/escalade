@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/">Accueil</a>
+            <a class="navbar-brand " href="${pageContext.request.contextPath}/">Accueil</a>
         </div>
         <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -21,7 +21,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a data-toggle="dropdown" href="#">Topos<b class="caret"></b></a>
+                <a data-toggle="dropdown"   href="#">Topos<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="${pageContext.request.contextPath}/liste_topos">Liste des topos</a></li>
                     <li><a href="${pageContext.request.contextPath}/mes_topos">Mes Topos</a></li>

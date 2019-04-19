@@ -11,7 +11,10 @@
     <h2 class="accueil">Bonjour ${utilisateurConnecte.pseudo}</h2>
     <p class="accueil"><strong>Bienvenue sur Escalade OC</strong>, consultez les meilleurs sites de grimpe, proposer vos
         topos ou empruntez-en! </p>
-    <img class="img-accueil" src="${pageContext.request.contextPath}/resources/images/background.jpg" alt="Paysage">
+
+    <div class="media col-lg-12 text-center">
+            <iframe width="420" height="320" src="https://www.youtube.com/embed/Fb22k-B08R4" frameborder="0" allowfullscreen></iframe>
+    </div>
     <c:if test="${not empty listToposARendre}">
         <h2 class="accueil">
             A rendre rapidement:

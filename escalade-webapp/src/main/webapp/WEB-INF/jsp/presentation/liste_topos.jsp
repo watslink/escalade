@@ -57,16 +57,27 @@
                 <td class="col-xs-3">${topo.nom}</td>
                 <td class="col-xs-5">${topo.description}</td>
                 <td class="col-xs-4">
-                    <a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topo.topo_id}"
-                       class="btn btn-primary">Détails</a>
-                    <a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Mes topos</a>
-                    <c:if test="${ not empty topo.listTopoAPreter}">
-                    <a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"
-                       class="btn btn-warning">Emprunter</a>
-                    </c:if>
-                    <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_topo?topo_id=${topo.topo_id}"
-                    ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a>
-                </td>
+                    <div class="btn-group">
+                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/liste_sites_par_topo?topo_id=${topo.topo_id}">Détails</a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/addToMy_topos?topo_id=${topo.topo_id}" ><span class="glyphicon glyphicon-plus"></span> Mes topos</a>
+                            </li>
+                            <c:if test="${ not empty topo.listTopoAPreter}">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/emprunter_topo?topo_id=${topo.topo_id}"><span class="badge text-success">${topo.listTopoAPreter.size()}</span> Emprunter</a>
+                            </li>
+                            </c:if>
+                            <li>
+                                <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_topo?topo_id=${topo.topo_id}"
+                                ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i> Supprimer</a>
+                            </li>
+                        </ul>
+                    </div>
+                 </td>
             </tr>
         </c:forEach>
         </tbody>
