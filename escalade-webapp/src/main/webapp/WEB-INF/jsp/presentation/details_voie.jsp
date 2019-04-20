@@ -11,11 +11,11 @@
 <h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${voie.secteur.site.departement.code}"> ${voie.secteur.site.departement.nom} ${voie.secteur.site.departement.code}</a> /
     Site: <a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${voie.secteur.site.site_id}"> ${voie.secteur.site.nom}</a> /
  Secteur: ${voie.secteur.nom}</h4>
-<div class="container-fluid">
+<div class="container">
         <table  id="table" class="table table-striped sortTable">
             <thead>
-            <tr class="row">
-                <th >Numéro</th>
+            <tr>
+                <th >Longueur N°</th>
                 <th >Description</th>
                 <th >Hauteur</th>
                 <th >Cotation</th>
@@ -25,7 +25,7 @@
             </thead>
             <tbody>
             <c:forEach items="${voie.listLongueur}" var="longueur">
-                <tr class="row">
+                <tr>
                     <td > ${longueur.numero}</td>
                     <td > ${longueur.description}</td>
                     <td > ${longueur.hauteur}</td>

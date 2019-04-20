@@ -8,7 +8,7 @@
 
 <%@include file="../include/menu.jsp" %>
 
-<div class="container-fluid">
+<div class="container">
     <h1> Topo: ${topo.nom} </h1>
     <h4> Utilisateurs propriétaires: </h4>
     <table id="table1" class="table table-striped sortTable">
@@ -38,7 +38,7 @@
                             <div class="form-group col-xs-8">
                                 <div class="form-group">
                                     <div class='input-group date datepicker' >
-                                        <input type='text' class="form-control" required/>
+                                        <input type='text' class="form-control" name="date" required/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                          </span>

@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    $('.sortTable').dataTable( {
+    var table=$('.sortTable').dataTable( {
+        scrollY:        "500px",
+        scrollCollapse: true,
+        paging:         false,
         language:{
             "sProcessing":     "Traitement en cours...",
             "sSearch":         "Rechercher&nbsp;:",
@@ -26,12 +29,18 @@ $(document).ready(function() {
             }
         },
         info: false,
+        responsive: true,
+        deferRender:true,
         aoColumnDefs: [{
             bSortable: false,
             aTargets: ['nosort']
         }]
+
+
     } );
+    new $.fn.dataTable.FixedHeader( table );
 } );
+
 
 $(function($){
     $.fn.datepicker.dates['fr'] = {

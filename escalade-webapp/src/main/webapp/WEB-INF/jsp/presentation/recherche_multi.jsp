@@ -8,7 +8,7 @@
 
 <%@include file="../include/menu.jsp" %>
 <h1> Recherche avancée </h1>
-<div class="container-fluid">
+<div class="container">
     <div >
         <form:form  action="recherche_multi" method="post" >
             <div class="form-group col-xs-12 col-md-4">
@@ -56,7 +56,7 @@
             <th >Site</th>
             <th >Secteur</th>
             <th >Voie</th>
-            <th >Numéro</th>
+            <th >Longueur N°</th>
             <th >Cotation</th>
             <th >Hauteur (m)</th>
             <th >Points</th>

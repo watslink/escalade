@@ -8,7 +8,7 @@
 <%@include file="../include/menu.jsp" %>
 <h1> Sites: </h1>
 <h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}"> ${departement.nom} ${departement.code}</a></h4>
-<div class="container-fluid">
+<div class="container">
     <div class="text-center">
         <button data-toggle="modal" href="#ajouter" class="btn btn-success">Ajouter un Site</button>
     </div>

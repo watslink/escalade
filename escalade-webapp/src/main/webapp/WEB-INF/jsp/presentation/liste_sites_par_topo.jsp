@@ -28,7 +28,7 @@
                                     <th>Nom</th>
                                     <th>Departement</th>
                                     <th>Ville</th>
-                                    <th>dans le topo?</th>
+                                    <th class="nosort">dans le topo?</th>
                                 </tr>
                                 </thead>
 

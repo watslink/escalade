@@ -16,9 +16,9 @@
             <iframe width="420" height="320" src="https://www.youtube.com/embed/Fb22k-B08R4" frameborder="0" allowfullscreen></iframe>
     </div>
     <c:if test="${not empty listToposARendre}">
-        <h2 class="accueil">
-            A rendre rapidement:
-        </h2>
+        <h4 class="accueil">
+            Topo à rendre rapidement:
+        </h4>
         <table class="table table-condensed">
             <thead>
             <tr>

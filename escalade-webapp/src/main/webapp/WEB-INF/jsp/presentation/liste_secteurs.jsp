@@ -10,7 +10,7 @@
 <h1> Secteurs: </h1>
 <h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}"> ${site.departement.nom} ${site.departement.code}</a> /
  Site: <a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"> ${site.nom} </a></h4>
-<div class="container-fluid">
+<div class="container">
     <div class="text-center">
         <button data-toggle="modal" href="#ajouterSecteur" class="btn btn-success">Ajouter un secteur</button>
     </div>
