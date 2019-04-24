@@ -56,7 +56,7 @@
         <c:forEach items="${departement.listSite}" var="site">
             <tr>
                 <td class="col-xs-5">${site.nom}</td>
-                <td class="col-xs-4">${site.ville}</td>
+                <td class="col-xs-4">${site.ville.nom}</td>
                 <td class="col-xs-3"><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
                        class="btn btn-primary">Détails</a>
                     <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"

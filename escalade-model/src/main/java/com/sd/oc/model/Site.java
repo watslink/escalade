@@ -24,6 +24,10 @@ public class Site {
     private String nom;
 
     @ManyToOne
+    @JoinColumn(name="code_departement")
+    private Departement departement;
+
+    @ManyToOne
     @JoinColumn(name="ville_id")
     private Ville ville;
 
@@ -36,8 +40,9 @@ public class Site {
             inverseJoinColumns={@JoinColumn(name="topo_id")})
     private Set<Topo> listTopo;
 
-    public Site(String nom, Ville ville) {
+    public Site(String nom, Departement departement, Ville ville) {
         this.nom = nom;
+        this.departement=departement;
         this.ville = ville;
     }
 

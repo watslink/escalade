@@ -3,6 +3,7 @@ package com.sd.oc.webapp.controller;
 import com.sd.oc.Service.ServiceInterface.DepartementService;
 import com.sd.oc.Service.ServiceInterface.SiteService;
 import com.sd.oc.Service.ServiceInterface.TopoService;
+import com.sd.oc.Service.ServiceInterface.VilleService;
 import com.sd.oc.model.Secteur;
 import com.sd.oc.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class SiteController {
     private DepartementService departementService;
 
     @Autowired
+    private VilleService villeService;
+
+    @Autowired
     private TopoService topoService;
 
     @GetMapping("/liste_secteurs")
@@ -35,9 +39,9 @@ public class SiteController {
 
     @PostMapping("/ajouter_site")
     public String addSite(@RequestParam String departement_code,
-                          @RequestParam String ville,
+                          @RequestParam Integer ville_id,
                           @RequestParam String nom){
-        Site site = new Site(nom, departementService.get(departement_code), ville);
+        Site site = new Site(nom, departementService.get(departement_code), villeService.get(ville_id));
         siteService.add(site);
         return "redirect:/liste_sites_par_departement?code_departement="+departement_code;
     }
