@@ -30,7 +30,7 @@ $(document).ready(function() {
         },
         info: false,
         responsive: true,
-        deferRender:true,
+
         aoColumnDefs: [{
             bSortable: false,
             aTargets: ['nosort']
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     } );
 
-    new $.fn.dataTable.FixedHeader( table );
+
 } );
 
 

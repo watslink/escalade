@@ -31,10 +31,10 @@ public class Site {
     @JoinColumn(name="ville_id")
     private Ville ville;
 
-    @OneToMany(mappedBy ="site", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy ="site", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Secteur> listSecteur;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="topo_sites",
             joinColumns={@JoinColumn(name="site_id")},
             inverseJoinColumns={@JoinColumn(name="topo_id")})

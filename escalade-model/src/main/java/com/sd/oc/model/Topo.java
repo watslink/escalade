@@ -26,14 +26,13 @@ public class Topo {
     @Column
     private String description;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="topo_sites",
             joinColumns={@JoinColumn(name="topo_id")},
             inverseJoinColumns={@JoinColumn(name="site_id")})
     private Set<Site> listSite;
 
     @OneToMany(mappedBy ="topoReference", orphanRemoval = true)
-    @LazyCollection(LazyCollectionOption.FALSE)
     private Set<TopoAPreter> listTopoAPreter;
 
     public Topo(String nom, String description) {

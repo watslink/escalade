@@ -21,10 +21,10 @@ public class Departement {
     @Column
     private String nom;
 
-    @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy ="departement", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Site> listSite;
 
-    @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy ="departement", fetch = FetchType.LAZY, orphanRemoval = true)
     @OrderBy("nom ASC")
     private Set<Ville> listVille;
 

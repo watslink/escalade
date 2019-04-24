@@ -28,11 +28,11 @@ public class Voie {
     @JoinColumn(name="secteur_id")
     private Secteur secteur;
 
-    @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy ="voie", fetch = FetchType.LAZY, orphanRemoval = true)
     @OrderBy("numero ASC")
     private Set<Longueur> listLongueur;
 
-    @OneToMany(mappedBy ="voie", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy ="voie", fetch = FetchType.LAZY, orphanRemoval = true)
     @OrderBy("date DESC")
     private Set<Commentaire> listCommentaire;
 
