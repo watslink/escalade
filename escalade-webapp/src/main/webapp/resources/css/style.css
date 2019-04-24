@@ -45,6 +45,11 @@
     margin-bottom: 30px;
 
 }
+
+table{
+    width: 100%;
+}
+
 h1{
     text-align: center;
     color: #4995ba;

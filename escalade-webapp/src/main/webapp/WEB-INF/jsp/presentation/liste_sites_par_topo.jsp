@@ -22,7 +22,7 @@
                 <div class="modal-body">
                     <form:form class="form-horizontal text-center" action="update_sites_topo" method="post">
                         <fieldset>
-                            <table id="table" class="table table-condensed sortTable">
+                            <table id="tableSite" class="table table-condensed sortTable">
                                 <thead>
                                 <tr>
                                     <th>Nom</th>
@@ -41,7 +41,7 @@
                                                     ${site.departement.nom}(${site.departement.code})
                                             </a>
                                         </td>
-                                        <td>${site.ville}</td>
+                                        <td>${site.ville.nom}</td>
                                         <c:if test="${topo.listSite.contains(site)}">
                                             <td><input type="checkbox" name="listSite_id" value="${site.site_id}" checked></td>
                                         </c:if>
@@ -79,7 +79,7 @@
                     ${site.departement.nom}(${site.departement.code})
                     </a>
                 </td>
-                <td>${site.ville}</td>
+                <td>${site.ville.nom}</td>
                 <td><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
                        class="btn btn-primary">Détails</a></td>
             </tr>

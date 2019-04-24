@@ -31,7 +31,13 @@
                             <div  class="form-group ">
                                 <label class="col-md-4 control-label" for="ville">Ville</label>
                                 <div class="col-md-4 ">
-                                    <input  type="text" class="form-control"  id="ville" name="ville" required>
+                                    <select name="ville_id" id="ville" class="form-control" required>
+                                        <c:forEach items="${departement.listVille}" var="ville">
+                                            <option value="${ville.ville_id}">
+                                                    ${ville.nom}
+                                            </option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                             </div>
                         <input type="text" hidden id="departement_code" name="departement_code" value="${departement.code}">

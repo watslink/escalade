@@ -70,7 +70,7 @@
                          ${longueur.voie.secteur.site.departement.nom}(${longueur.voie.secteur.site.departement.code})
                     </a>
                 </td>
-                <td > ${longueur.voie.secteur.site.ville}</td>
+                <td > ${longueur.voie.secteur.site.ville.nom}</td>
                 <td >
                     <a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${longueur.voie.secteur.site.site_id}" >
                         ${longueur.voie.secteur.site.nom}

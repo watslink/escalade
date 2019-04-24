@@ -24,6 +24,10 @@ public class Departement {
     @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Site> listSite;
 
+    @OneToMany(mappedBy ="departement", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OrderBy("nom ASC")
+    private Set<Ville> listVille;
+
     public Departement() {
     }
 

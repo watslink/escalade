@@ -33,7 +33,7 @@ public class LongueurDAOImpl extends GenericDAOImpl<Longueur, Integer> implement
         if(!code_departement.equals(""))
         likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("departement").get("code"),code_departement));
         if(!ville.equals(""))
-        likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("ville"),ville));
+        likeRestriction.getExpressions().add(cb.equal(c.get("voie").get("secteur").get("site").get("ville").get("nom"),ville));
 
         likeRestriction.getExpressions().add(cb.between(c.<Integer>get("hauteur"), hauteur_min , hauteur_max));
 
