@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="ville")
+@Table(name = "ville")
 @Getter
 @Setter
 public class Ville {
@@ -21,7 +21,7 @@ public class Ville {
     private String nom;
 
     @ManyToOne
-    @JoinColumn(name="code_departement")
+    @JoinColumn(name = "code_departement")
     private Departement departement;
 
     public Ville() {

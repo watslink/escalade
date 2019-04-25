@@ -1,20 +1,15 @@
 package com.sd.oc.model;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name="secteur")
+@Table(name = "secteur")
 @Getter
 @Setter
 public class Secteur {
@@ -27,10 +22,10 @@ public class Secteur {
     private String nom;
 
     @ManyToOne
-    @JoinColumn(name="site_id")
+    @JoinColumn(name = "site_id")
     private Site site;
 
-    @OneToMany(mappedBy ="secteur", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "secteur", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Voie> listVoie;
 
     public Secteur(String nom, Site site) {

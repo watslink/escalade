@@ -8,9 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UtilisateurDAOImpl extends GenericDAOImpl<Utilisateur, Integer> implements UtilisateurDAO {
 
-
     @Override
     public Utilisateur findByPseudo(String pseudo) {
-        return em.unwrap(Session.class).byNaturalId(Utilisateur.class).using("pseudo",pseudo).load();
+        return em.unwrap(Session.class).byNaturalId(Utilisateur.class).using("pseudo", pseudo).load();
     }
 }

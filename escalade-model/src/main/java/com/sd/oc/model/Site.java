@@ -1,17 +1,15 @@
 package com.sd.oc.model;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name="site")
+@Table(name = "site")
 @Getter
 @Setter
 public class Site {
@@ -24,25 +22,25 @@ public class Site {
     private String nom;
 
     @ManyToOne
-    @JoinColumn(name="code_departement")
+    @JoinColumn(name = "code_departement")
     private Departement departement;
 
     @ManyToOne
-    @JoinColumn(name="ville_id")
+    @JoinColumn(name = "ville_id")
     private Ville ville;
 
-    @OneToMany(mappedBy ="site", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "site", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Secteur> listSecteur;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name="topo_sites",
-            joinColumns={@JoinColumn(name="site_id")},
-            inverseJoinColumns={@JoinColumn(name="topo_id")})
+    @JoinTable(name = "topo_sites",
+            joinColumns = {@JoinColumn(name = "site_id")},
+            inverseJoinColumns = {@JoinColumn(name = "topo_id")})
     private Set<Topo> listTopo;
 
     public Site(String nom, Departement departement, Ville ville) {
         this.nom = nom;
-        this.departement=departement;
+        this.departement = departement;
         this.ville = ville;
     }
 

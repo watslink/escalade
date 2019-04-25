@@ -13,7 +13,6 @@ public class UtilisateurServiceImpl extends GenericServiceImpl<Utilisateur, Inte
     @Autowired
     private UtilisateurDAO utilisateurDAO;
 
-
     public UtilisateurServiceImpl() {
         this.genericDAO = utilisateurDAO;
     }

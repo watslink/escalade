@@ -23,7 +23,6 @@ import javax.servlet.Filter;
 @Import(ConfigurationService.class)
 public class ConfigurationWebApp implements WebMvcConfigurer {
 
-
     /**
      * Configuration du viewResolver
      * @return resolver
@@ -49,10 +48,8 @@ public class ConfigurationWebApp implements WebMvcConfigurer {
 
     }
 
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("acces/login");
     }
-
 }

@@ -1,4 +1,3 @@
-
 <%@include file="../include/taglibs.jsp" %>
 <html>
 <%@include file="../include/head.jsp" %>
@@ -24,7 +23,8 @@
                 <div class="panel-body">
                     <form:form action="inscription" method="post" modelAttribute="utilisateur">
                         <div class="form-group">
-                            <form:input type="text" minlength="3" path="pseudo" id="pseudo" class="form-control input-sm"
+                            <form:input type="text" minlength="3" path="pseudo" id="pseudo"
+                                        class="form-control input-sm"
                                         placeholder="Pseudo" required="true"/>
                         </div>
                         <div class="form-group">
@@ -36,13 +36,15 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <form:input type="password" minlength="6" path="mot_de_passe" id="password"
-                                                class="form-control input-sm" placeholder="Mot de passe" required="true"/>
+                                                class="form-control input-sm" placeholder="Mot de passe"
+                                                required="true"/>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <input type="password" name="password_confirmation" id="password_confirmation"
-                                           class="form-control input-sm" placeholder="Confirmer Mot de passe" required="true"/>
+                                           class="form-control input-sm" placeholder="Confirmer Mot de passe"
+                                           required="true"/>
                                 </div>
                             </div>
                         </div>

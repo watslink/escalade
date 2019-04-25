@@ -8,7 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,15 +19,14 @@ import java.util.List;
 
 @Controller
 
-public class MainController extends AbstractController{
+public class MainController extends AbstractController {
 
     @Autowired
     private TopoService topoService;
 
-
     @GetMapping("/")
-    public String pageAccueil(Model model){
-        List<TopoAPreter> listToposARendre=new ArrayList<>();
+    public String pageAccueil(Model model) {
+        List<TopoAPreter> listToposARendre = new ArrayList<>();
         for (TopoAPreter topoAPreter : getUtilisateurConnecte().getListToposEmprunter()) {
             if (topoAPreter.getDate_retour().before(new Date())) {
                 listToposARendre.add(topoAPreter);
@@ -36,7 +35,6 @@ public class MainController extends AbstractController{
         }
         return "index";
     }
-
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request,
@@ -49,6 +47,4 @@ public class MainController extends AbstractController{
         status.setComplete();
         return "redirect:/login?logout";
     }
-
-
 }

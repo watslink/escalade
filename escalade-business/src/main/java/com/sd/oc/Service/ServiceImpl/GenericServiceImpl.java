@@ -8,8 +8,7 @@ import java.util.List;
 
 public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
 
-
-    protected GenericDAO<T,K> genericDAO;
+    protected GenericDAO<T, K> genericDAO;
 
     @Override
     @Transactional(readOnly = true)
@@ -38,6 +37,6 @@ public abstract class GenericServiceImpl<T, K> implements GenericService<T, K> {
     @Override
     @Transactional(readOnly = true)
     public List<T> getAll() {
-       return genericDAO.findAll();
+        return genericDAO.findAll();
     }
 }

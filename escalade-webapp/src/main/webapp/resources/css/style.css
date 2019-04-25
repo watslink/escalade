@@ -1,101 +1,99 @@
 
-
-
-.marginForm{
+.marginForm {
     margin-top: 30px;
 }
 
-.headerBand{
-    background: url("../images/headerBackground.jpg")  no-repeat center;
+.headerBand {
+    background: url("../images/headerBackground.jpg") no-repeat center;
     background-size: cover;
 }
 
-.jumbotron{
+.jumbotron {
     margin-bottom: 0;
     padding: 0.5em 0.6em;
 }
 
-.jumbotron h1{
-     text-align: center;
-     font-family: Rockwell, Tahoma, sans-serif;
-     color: #000000;
+.jumbotron h1 {
+    text-align: center;
+    font-family: Rockwell, Tahoma, sans-serif;
+    color: #000000;
     font-size: 2em;
- }
+}
 
-.navbar{
+.navbar {
     background-color: #413c11;
     margin-bottom: 0;
     border-radius: 5px;
 
 }
 
-.glyphicon-user{
-    color:whitesmoke;
-}
-.accueil{
-    text-align: center;
-    margin:20px;
+.glyphicon-user {
+    color: whitesmoke;
 }
 
-.img-accueil{
+.accueil {
+    text-align: center;
+    margin: 20px;
+}
+
+.img-accueil {
     display: block;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 30px;
 
 }
 
-table{
+table {
     width: 100%;
 }
 
-h1{
+h1 {
     text-align: center;
     color: #4995ba;
     size: 2em;
 }
 
-h4{
+h4 {
     text-align: center;
 }
 
 
-#accordeon{
+#accordeon {
     margin-top: 15px;
 }
 
-.commentaire{
+.commentaire {
     background-color: #ead7b7;
-    padding:20px;
-    margin:50px;
+    padding: 20px;
+    margin: 50px;
     border-radius: 10px;
 }
 
-#formComm{
+#formComm {
     margin-top: 40px;
 }
 
-.btn{
-    margin:1px;
+.btn {
+    margin: 1px;
 }
 
-.paddingleft{
+.paddingleft {
     padding-left: 30px;
 }
 
-.input-group.date.datepicker
-{
-    padding:1px;
+.input-group.date.datepicker {
+    padding: 1px;
 }
 
 
-.navbar-inverse .navbar-brand{
+.navbar-inverse .navbar-brand {
     font-family: "Cooper Black", Tahoma, sans-serif;
     color: #d18900;
 }
 
-.navbar-inverse .navbar-nav>li>a{
+.navbar-inverse .navbar-nav > li > a {
     font-family: "Cooper Black", Tahoma, sans-serif;
     color: #d18900;
 }

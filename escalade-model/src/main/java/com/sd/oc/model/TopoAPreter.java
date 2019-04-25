@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name= "utilisateur_topos")
+@Table(name = "utilisateur_topos")
 @Getter
 @Setter
 public class TopoAPreter implements Serializable {
@@ -18,22 +18,22 @@ public class TopoAPreter implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int utilisateur_topos_id;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private boolean disponible;
 
     @Temporal(TemporalType.DATE)
     private Date date_retour;
 
     @ManyToOne
-    @JoinColumn(name ="utilisateur_id")
+    @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateurProprietaire;
 
     @ManyToOne
-    @JoinColumn(name ="utilisateur_emprunteur_id")
+    @JoinColumn(name = "utilisateur_emprunteur_id")
     private Utilisateur utilisateurEmprunteur;
 
     @ManyToOne
-    @JoinColumn(name ="topo_id")
+    @JoinColumn(name = "topo_id")
     private Topo topoReference;
 
     public TopoAPreter(boolean disponible, Utilisateur utilisateurProprietaire, Topo topoReference) {

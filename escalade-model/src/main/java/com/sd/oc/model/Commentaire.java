@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name= "commentaire")
+@Table(name = "commentaire")
 @Getter
 @Setter
 public class Commentaire {
@@ -24,16 +24,16 @@ public class Commentaire {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name ="voie_id")
+    @JoinColumn(name = "voie_id")
     private Voie voie;
 
     @ManyToOne
-    @JoinColumn(name ="utilisateur_id")
+    @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
 
     public Commentaire(String texte) {
         this.texte = texte;
-        this.date= new Date();
+        this.date = new Date();
     }
 
     public Commentaire() {

@@ -25,9 +25,9 @@
                             <table id="tableSite" class="table noSearch table-condensed">
                                 <thead>
                                 <tr class="row">
-                                    <th class="col-xs-3" >Nom</th>
-                                    <th class="col-xs-3" >Departement</th>
-                                    <th class="col-xs-3" >Ville</th>
+                                    <th class="col-xs-3">Nom</th>
+                                    <th class="col-xs-3">Departement</th>
+                                    <th class="col-xs-3">Ville</th>
                                     <th class="cole-xs-3 nosort">dans le topo?</th>
                                 </tr>
                                 </thead>
@@ -35,18 +35,20 @@
                                 <tbody>
                                 <c:forEach items="${listSites}" var="site">
                                     <tr class="row">
-                                        <td class="col-xs-3" >${site.nom}</td>
-                                        <td class="col-xs-3" >
+                                        <td class="col-xs-3">${site.nom}</td>
+                                        <td class="col-xs-3">
                                             <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}">
                                                     ${site.departement.nom}(${site.departement.code})
                                             </a>
                                         </td>
-                                        <td class="col-xs-3" >${site.ville.nom}</td>
+                                        <td class="col-xs-3">${site.ville.nom}</td>
                                         <c:if test="${topo.listSite.contains(site)}">
-                                            <td class="col-xs-3" ><input type="checkbox" name="listSite_id" value="${site.site_id}" checked></td>
+                                            <td class="col-xs-3"><input type="checkbox" name="listSite_id"
+                                                                        value="${site.site_id}" checked></td>
                                         </c:if>
                                         <c:if test="${!topo.listSite.contains(site)}">
-                                            <td class="col-xs-3" ><input type="checkbox" name="listSite_id" value="${site.site_id}"></td>
+                                            <td class="col-xs-3"><input type="checkbox" name="listSite_id"
+                                                                        value="${site.site_id}"></td>
                                         </c:if>
                                     </tr>
                                 </c:forEach>
@@ -69,14 +71,13 @@
             <th class="nosort">Détails</th>
         </tr>
         </thead>
-
         <tbody>
         <c:forEach items="${topo.listSite}" var="site">
             <tr>
                 <td>${site.nom}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}">
-                    ${site.departement.nom}(${site.departement.code})
+                            ${site.departement.nom}(${site.departement.code})
                     </a>
                 </td>
                 <td>${site.ville.nom}</td>
@@ -85,9 +86,7 @@
             </tr>
         </c:forEach>
         </tbody>
-
     </table>
-
 </div>
 <%@include file="../include/footer.jsp" %>
 </body>

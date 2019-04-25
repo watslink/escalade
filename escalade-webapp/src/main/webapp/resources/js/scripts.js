@@ -1,58 +1,52 @@
-    $.extend( $.fn.dataTable.defaults, {
-        scrollY:        "500px",
-        scrollCollapse: true,
-        paging:         false,
-        language:{
-            "sProcessing":     "Traitement en cours...",
-            "sSearch":         "Rechercher&nbsp;:",
-            "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
-            "sLoadingRecords": "Chargement en cours...",
-            "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
-            "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
-            "oPaginate": {
-                "sFirst":      "Premier",
-                "sPrevious":   "Pr&eacute;c&eacute;dent",
-                "sNext":       "Suivant",
-                "sLast":       "Dernier"
-            },
-            "oAria": {
-                "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
-                "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
-            },
-            "select": {
-                "rows": {
-                    _: "%d lignes séléctionnées",
-                    0: "Aucune ligne séléctionnée",
-                    1: "1 ligne séléctionnée"
-                }
-            }
+$.extend($.fn.dataTable.defaults, {
+    scrollY: "500px",
+    scrollCollapse: true,
+    paging: false,
+    language: {
+        "sProcessing": "Traitement en cours...",
+        "sSearch": "Rechercher&nbsp;:",
+        "sLengthMenu": "Afficher _MENU_ &eacute;l&eacute;ments",
+        "sLoadingRecords": "Chargement en cours...",
+        "sZeroRecords": "Aucun &eacute;l&eacute;ment &agrave; afficher",
+        "sEmptyTable": "Aucune donn&eacute;e disponible dans le tableau",
+        "oPaginate": {
+            "sFirst": "Premier",
+            "sPrevious": "Pr&eacute;c&eacute;dent",
+            "sNext": "Suivant",
+            "sLast": "Dernier"
         },
-        info: false,
-        responsive: true,
+        "oAria": {
+            "sSortAscending": ": activer pour trier la colonne par ordre croissant",
+            "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+        },
+        "select": {
+            "rows": {
+                _: "%d lignes séléctionnées",
+                0: "Aucune ligne séléctionnée",
+                1: "1 ligne séléctionnée"
+            }
+        }
+    },
+    info: false,
+    responsive: true,
 
-        aoColumnDefs: [{
-            bSortable: false,
-            aTargets: ['nosort']
-        }]
+    aoColumnDefs: [{
+        bSortable: false,
+        aTargets: ['nosort']
+    }]
+});
 
+$('.sortTable').DataTable({});
 
-    } );
-
-
-$('.sortTable').DataTable( {
-} );
-
-
-
-    $('#gererSites').on('shown.bs.modal', function () {
-        var table = $('.noSearch').DataTable( {
-            searching: false
-        } );
-        table.columns.adjust();
+$('#gererSites').on('shown.bs.modal', function () {
+    var table = $('.noSearch').DataTable({
+        searching: false
     });
+    table.columns.adjust();
+});
 
 
-$(function($){
+$(function ($) {
     $.fn.datepicker.dates['fr'] = {
         days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
         daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
@@ -67,10 +61,9 @@ $(function($){
     };
 }(jQuery));
 
-
 $(function () {
     $('.datepicker').datepicker({
-        format:'dd/mm/yyyy',
+        format: 'dd/mm/yyyy',
         startDate: new Date(),
         language: 'fr',
         autoclose: true,
@@ -78,8 +71,8 @@ $(function () {
     });
 });
 
-$(function() {
-    $('a[data-confirm]').click(function(ev) {
+$(function () {
+    $('a[data-confirm]').click(function (ev) {
         var href = $(this).attr('href');
 
         if (!$('#dataConfirmModal').length) {
@@ -87,8 +80,10 @@ $(function() {
         }
         $('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm'));
         $('#dataConfirmOK').attr('href', href);
-        $('#dataConfirmModal').modal({show:true});
+        $('#dataConfirmModal').modal({show: true});
 
         return false;
     });
 });
+
+$(".slider").slider({});

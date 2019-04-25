@@ -11,15 +11,13 @@ import java.util.List;
 @Service
 public class LongueurServiceImpl extends GenericServiceImpl<Longueur, Integer> implements LongueurService {
 
-
-
-
     @Autowired
     LongueurDAO longueurDAO;
 
     public LongueurServiceImpl(LongueurDAO longueurDAO) {
         this.genericDAO = longueurDAO;
     }
+
     @Override
     public List<Longueur> rechercheMulticriteres(String cotation, int nombre_points_min, int nombre_points_max, int hauteur_min, int hauteur_max, String code_departement, String ville) {
         return longueurDAO.getListFromCriteria(cotation, nombre_points_min, nombre_points_max, hauteur_min, hauteur_max, code_departement, ville);

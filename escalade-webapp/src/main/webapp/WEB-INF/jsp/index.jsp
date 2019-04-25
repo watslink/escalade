@@ -5,7 +5,6 @@
 <%@include file="include/head.jsp" %>
 <body>
 <%@include file="include/header.jsp" %>
-
 <%@include file="include/menu.jsp" %>
 <div class="container">
     <h2 class="accueil">Bonjour ${utilisateurConnecte.pseudo}</h2>
@@ -13,7 +12,8 @@
         topos ou empruntez-en! </p>
 
     <div class="media col-lg-12 text-center">
-            <iframe width="420" height="320" src="https://www.youtube.com/embed/Fb22k-B08R4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="420" height="320" src="https://www.youtube.com/embed/Fb22k-B08R4" frameborder="0"
+                allowfullscreen></iframe>
     </div>
     <c:if test="${not empty listToposARendre}">
         <h4 class="accueil">
@@ -31,7 +31,9 @@
             <c:forEach items="${listToposARendre}" var="topoAPreter">
                 <tr>
                     <td>${topoAPreter.topoReference.nom}</td>
-                    <td><a href="mailto:${topoAPreter.utilisateurProprietaire.mail}">${topoAPreter.utilisateurProprietaire.pseudo}</a></td>
+                    <td>
+                        <a href="mailto:${topoAPreter.utilisateurProprietaire.mail}">${topoAPreter.utilisateurProprietaire.pseudo}</a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -39,8 +41,6 @@
         </table>
     </c:if>
 </div>
-
-
 <%@include file="include/footer.jsp" %>
 </body>
 </html>

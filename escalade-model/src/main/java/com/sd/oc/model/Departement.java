@@ -4,13 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-
 import java.util.Objects;
 import java.util.Set;
 
 
 @Entity
-@Table(name="departement")
+@Table(name = "departement")
 @Getter
 @Setter
 public class Departement {
@@ -21,10 +20,10 @@ public class Departement {
     @Column
     private String nom;
 
-    @OneToMany(mappedBy ="departement", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "departement", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Site> listSite;
 
-    @OneToMany(mappedBy ="departement", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "departement", fetch = FetchType.LAZY, orphanRemoval = true)
     @OrderBy("nom ASC")
     private Set<Ville> listVille;
 

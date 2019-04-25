@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class LongueurController extends AbstractController{
+public class LongueurController extends AbstractController {
 
     @Autowired
     LongueurService longueurService;
@@ -22,17 +22,17 @@ public class LongueurController extends AbstractController{
 
     @PostMapping("/ajouter_longueur")
     public String addLongueur(@RequestParam int voie_id,
-                              @ModelAttribute Longueur longueur){
-        Voie voie=voieService.get(voie_id);
+                              @ModelAttribute Longueur longueur) {
+        Voie voie = voieService.get(voie_id);
         longueur.setVoie(voie);
         longueurService.add(longueur);
-        return "redirect:/details_voie?voie_id="+voie.getVoie_id();
+        return "redirect:/details_voie?voie_id=" + voie.getVoie_id();
     }
 
     @GetMapping("/supprimer_longueur")
-    public String deleteLongueur(@RequestParam int longueur_id){
-        Longueur longueur=longueurService.get(longueur_id);
+    public String deleteLongueur(@RequestParam int longueur_id) {
+        Longueur longueur = longueurService.get(longueur_id);
         longueurService.remove(longueur_id);
-        return "redirect:/details_voie?voie_id="+longueur.getVoie().getVoie_id();
+        return "redirect:/details_voie?voie_id=" + longueur.getVoie().getVoie_id();
     }
 }

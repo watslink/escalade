@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="info">
+
     <Properties>
         <Property name="filename">target/test.log</Property>
     </Properties>

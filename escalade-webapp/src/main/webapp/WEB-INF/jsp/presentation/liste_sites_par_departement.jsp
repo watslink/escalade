@@ -7,7 +7,9 @@
 <%@include file="../include/header.jsp" %>
 <%@include file="../include/menu.jsp" %>
 <h1> Sites: </h1>
-<h4> Département: <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}"> ${departement.nom} ${departement.code}</a></h4>
+<h4> Département: <a
+        href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${departement.code}"> ${departement.nom} ${departement.code}</a>
+</h4>
 <div class="container">
     <div class="text-center">
         <button data-toggle="modal" href="#ajouter" class="btn btn-success">Ajouter un Site</button>
@@ -20,7 +22,7 @@
                     <h4 class="modal-title">Ajouter un site</h4>
                 </div>
                 <div class="modal-body">
-                    <form:form class="form-horizontal text-center" action="ajouter_site" method="post" >
+                    <form:form class="form-horizontal text-center" action="ajouter_site" method="post">
                         <fieldset>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="nom">Nom</label>
@@ -28,7 +30,7 @@
                                     <input type="text" class="form-control" minlength="3" id="nom" name="nom" required>
                                 </div>
                             </div>
-                            <div  class="form-group ">
+                            <div class="form-group ">
                                 <label class="col-md-4 control-label" for="ville">Ville</label>
                                 <div class="col-md-4 ">
                                     <select name="ville_id" id="ville" class="form-control" required>
@@ -40,8 +42,9 @@
                                     </select>
                                 </div>
                             </div>
-                        <input type="text" hidden id="departement_code" name="departement_code" value="${departement.code}">
-                        <button type="submit" class="btn btn-success mb-2">Ajouter</button>
+                            <input type="text" hidden id="departement_code" name="departement_code"
+                                   value="${departement.code}">
+                            <button type="submit" class="btn btn-success mb-2">Ajouter</button>
                         </fieldset>
                     </form:form>
                 </div>
@@ -55,7 +58,6 @@
             <th class="col-xs-5">Nom</th>
             <th class="col-xs-4">Ville</th>
             <th class="nosort col-xs-3">Action</th>
-
         </tr>
         </thead>
         <tbody>
@@ -64,19 +66,16 @@
                 <td class="col-xs-5">${site.nom}</td>
                 <td class="col-xs-4">${site.ville.nom}</td>
                 <td class="col-xs-3"><a href="${pageContext.request.contextPath}/liste_secteurs?site_id=${site.site_id}"
-                       class="btn btn-primary">Détails</a>
-                    <a data-confirm="Confirmer la suppression?" href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"
-                       ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a>
-
+                                        class="btn btn-primary">Détails</a>
+                    <a data-confirm="Confirmer la suppression?"
+                       href="${pageContext.request.contextPath}/supprimer_site?site_id=${site.site_id}"
+                    ><i class="fa fa-trash fa-adjust" aria-hidden="true"></i></a>
                 </td>
             </tr>
-
         </c:forEach>
         </tbody>
     </table>
 </div>
 <%@include file="../include/footer.jsp" %>
-
-
 </body>
 </html>

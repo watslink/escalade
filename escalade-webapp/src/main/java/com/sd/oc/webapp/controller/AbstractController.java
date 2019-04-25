@@ -7,7 +7,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-
 @Controller
 public abstract class AbstractController {
 
@@ -15,8 +14,8 @@ public abstract class AbstractController {
     protected UtilisateurService utilisateurService;
 
     @ModelAttribute("utilisateurConnecte")
-    public Utilisateur getUtilisateurConnecte(){
-        return   utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
+    public Utilisateur getUtilisateurConnecte() {
+        return utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
 }

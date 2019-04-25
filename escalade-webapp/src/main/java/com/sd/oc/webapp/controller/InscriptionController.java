@@ -22,28 +22,28 @@ public class InscriptionController {
     private UtilisateurDAO utilisateurDAO;
 
     @GetMapping("/inscription")
-    public String inscription(Model model){
+    public String inscription(Model model) {
         model.addAttribute("utilisateur", new Utilisateur());
         return "acces/inscription";
     }
 
     @PostMapping("/inscription")
-    public String postInscription(  @RequestParam String password_confirmation,
-                                    @Valid @ModelAttribute("utilisateur") Utilisateur utilisateur,
-                                    BindingResult result){
+    public String postInscription(@RequestParam String password_confirmation,
+                                  @Valid @ModelAttribute("utilisateur") Utilisateur utilisateur,
+                                  BindingResult result) {
 
-        if(!BCryptManagerUtil.passwordencoder().matches(password_confirmation, utilisateur.getMot_de_passe())){
+        if (!BCryptManagerUtil.passwordencoder().matches(password_confirmation, utilisateur.getMot_de_passe())) {
 
             return "redirect:/inscription?errorPassword";
         }
-        for(Utilisateur user:utilisateurDAO.findAll()){
-            if(user.getPseudo().equals(utilisateur.getPseudo())){
+        for (Utilisateur user : utilisateurDAO.findAll()) {
+            if (user.getPseudo().equals(utilisateur.getPseudo())) {
                 return "redirect:/inscription?errorPseudo";
             }
         }
 
         utilisateurDAO.create(utilisateur);
 
-        return"redirect:/login?inscrit";
+        return "redirect:/login?inscrit";
     }
 }

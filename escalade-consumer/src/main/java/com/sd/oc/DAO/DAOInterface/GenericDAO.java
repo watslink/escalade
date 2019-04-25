@@ -1,10 +1,8 @@
 package com.sd.oc.DAO.DAOInterface;
 
-
 import java.util.List;
 
 public interface GenericDAO<T, K> {
-
 
     void create(T t);
 

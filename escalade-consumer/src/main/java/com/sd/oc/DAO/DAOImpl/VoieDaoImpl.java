@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class VoieDaoImpl extends GenericDAOImpl<Voie, Integer> implements VoieDAO {
-
 }

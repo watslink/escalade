@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class TopoDAOImpl extends GenericDAOImpl<Topo, Integer> implements TopoDAO {
-
 }

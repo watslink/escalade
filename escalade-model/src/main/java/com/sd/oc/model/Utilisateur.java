@@ -6,16 +6,13 @@ import lombok.Setter;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.NaturalId;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name= "utilisateur")
+@Table(name = "utilisateur")
 @Getter
 @Setter
 public class Utilisateur {
@@ -41,15 +38,15 @@ public class Utilisateur {
     @Column
     private String role;
 
-    @OneToMany(mappedBy ="utilisateur", orphanRemoval = true)
+    @OneToMany(mappedBy = "utilisateur", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Commentaire> listCommentaire;
 
-    @OneToMany(mappedBy ="utilisateurProprietaire", orphanRemoval = true)
+    @OneToMany(mappedBy = "utilisateurProprietaire", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<TopoAPreter> listTopoAPreter;
 
-    @OneToMany(mappedBy ="utilisateurEmprunteur")
+    @OneToMany(mappedBy = "utilisateurEmprunteur")
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<TopoAPreter> listToposEmprunter;
 
@@ -57,13 +54,13 @@ public class Utilisateur {
         this.pseudo = pseudo;
         this.mail = mail;
         this.mot_de_passe = BCryptManagerUtil.passwordencoder().encode(mot_de_passe);
-        this.enabled=true;
-        this.role="USER";
+        this.enabled = true;
+        this.role = "USER";
     }
 
     public Utilisateur() {
-        this.enabled=true;
-        this.role="USER";
+        this.enabled = true;
+        this.role = "USER";
     }
 
 

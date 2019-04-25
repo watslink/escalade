@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class VoieServiceImpl  extends GenericServiceImpl<Voie, Integer> implements VoieService {
+public class VoieServiceImpl extends GenericServiceImpl<Voie, Integer> implements VoieService {
 
     @Autowired
     public VoieServiceImpl(VoieDAO voieDAO) {

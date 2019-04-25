@@ -1,18 +1,15 @@
 package com.sd.oc.model;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.core.annotation.Order;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name="voie")
+@Table(name = "voie")
 @Getter
 @Setter
 public class Voie {
@@ -25,14 +22,14 @@ public class Voie {
     private String nom;
 
     @ManyToOne
-    @JoinColumn(name="secteur_id")
+    @JoinColumn(name = "secteur_id")
     private Secteur secteur;
 
-    @OneToMany(mappedBy ="voie", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "voie", fetch = FetchType.LAZY, orphanRemoval = true)
     @OrderBy("numero ASC")
     private Set<Longueur> listLongueur;
 
-    @OneToMany(mappedBy ="voie", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "voie", fetch = FetchType.LAZY, orphanRemoval = true)
     @OrderBy("date DESC")
     private Set<Commentaire> listCommentaire;
 
@@ -43,7 +40,6 @@ public class Voie {
 
     public Voie() {
     }
-
 
     @Override
     public boolean equals(Object o) {

@@ -2,16 +2,13 @@ package com.sd.oc.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name="topo")
+@Table(name = "topo")
 @Getter
 @Setter
 public class Topo {
@@ -27,12 +24,12 @@ public class Topo {
     private String description;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name="topo_sites",
-            joinColumns={@JoinColumn(name="topo_id")},
-            inverseJoinColumns={@JoinColumn(name="site_id")})
+    @JoinTable(name = "topo_sites",
+            joinColumns = {@JoinColumn(name = "topo_id")},
+            inverseJoinColumns = {@JoinColumn(name = "site_id")})
     private Set<Site> listSite;
 
-    @OneToMany(mappedBy ="topoReference", orphanRemoval = true)
+    @OneToMany(mappedBy = "topoReference", orphanRemoval = true)
     private Set<TopoAPreter> listTopoAPreter;
 
     public Topo(String nom, String description) {
