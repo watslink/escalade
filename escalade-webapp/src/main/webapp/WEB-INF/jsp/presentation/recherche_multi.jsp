@@ -34,14 +34,14 @@
                     (0-100)</label>
                 <div>
                     <input id="nombre_points" name="nombre_points" type="text" class=" slider span " value=""
-                           data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="[0,100]"/>
+                           data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[0,1000]"/>
                 </div>
             </div>
             <div class="form-group  col-xs-12">
-                <label class="col-xs-6 col-md-offset-2 col-md-4 control-label" for="hauteur">Hauteur (0-150m)</label>
+                <label class="col-xs-6 col-md-offset-2 col-md-4 control-label" for="hauteur">Hauteur (0-1000m)</label>
                 <div>
                     <input id="hauteur" name="hauteur" type="text" class="slider span " value="" data-slider-min="0"
-                           data-slider-max="150" data-slider-step="1" data-slider-value="[0,150]"/>
+                           data-slider-max="1000" data-slider-step="1" data-slider-value="[0,1000]"/>
                 </div>
             </div>
 
