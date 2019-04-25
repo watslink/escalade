@@ -12,7 +12,7 @@
     <div class="text-center">
         <button data-toggle="modal" href="#gererSites" class="btn btn-success">Gérer les Sites</button>
     </div>
-    <div class="modal" id="gererSites">
+    <div class="modal container" id="gererSites">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -22,31 +22,31 @@
                 <div class="modal-body">
                     <form:form class="form-horizontal text-center" action="update_sites_topo" method="post">
                         <fieldset>
-                            <table id="tableSite" class="table table-condensed sortTable">
+                            <table id="tableSite" class="table noSearch table-condensed">
                                 <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Departement</th>
-                                    <th>Ville</th>
-                                    <th class="nosort">dans le topo?</th>
+                                <tr class="row">
+                                    <th class="col-xs-3" >Nom</th>
+                                    <th class="col-xs-3" >Departement</th>
+                                    <th class="col-xs-3" >Ville</th>
+                                    <th class="cole-xs-3 nosort">dans le topo?</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
                                 <c:forEach items="${listSites}" var="site">
-                                    <tr>
-                                        <td>${site.nom}</td>
-                                        <td>
+                                    <tr class="row">
+                                        <td class="col-xs-3" >${site.nom}</td>
+                                        <td class="col-xs-3" >
                                             <a href="${pageContext.request.contextPath}/liste_sites_par_departement?code_departement=${site.departement.code}">
                                                     ${site.departement.nom}(${site.departement.code})
                                             </a>
                                         </td>
-                                        <td>${site.ville.nom}</td>
+                                        <td class="col-xs-3" >${site.ville.nom}</td>
                                         <c:if test="${topo.listSite.contains(site)}">
-                                            <td><input type="checkbox" name="listSite_id" value="${site.site_id}" checked></td>
+                                            <td class="col-xs-3" ><input type="checkbox" name="listSite_id" value="${site.site_id}" checked></td>
                                         </c:if>
                                         <c:if test="${!topo.listSite.contains(site)}">
-                                            <td><input type="checkbox" name="listSite_id" value="${site.site_id}"></td>
+                                            <td class="col-xs-3" ><input type="checkbox" name="listSite_id" value="${site.site_id}"></td>
                                         </c:if>
                                     </tr>
                                 </c:forEach>

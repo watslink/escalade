@@ -1,5 +1,4 @@
-$(document).ready(function() {
-    var table=$('.sortTable').dataTable( {
+    $.extend( $.fn.dataTable.defaults, {
         scrollY:        "500px",
         scrollCollapse: true,
         paging:         false,
@@ -40,9 +39,17 @@ $(document).ready(function() {
     } );
 
 
+$('.sortTable').DataTable( {
 } );
 
 
+
+    $('#gererSites').on('shown.bs.modal', function () {
+        var table = $('.noSearch').DataTable( {
+            searching: false
+        } );
+        table.columns.adjust();
+    });
 
 
 $(function($){
