@@ -12,6 +12,9 @@
     2- Placer le fichier war dans le dossier tomcat/webapps/
     3- Lancer tomcat
     4- Entrer l'adresse dans votre navigateur
+    5- Si vous utilisez les données de démos vous pouvez vous connecter pour n'importe quel pseudo 
+    (ex: melissa.hamon) de la BDD démo avec le mot de passe : motdepasse, sinon crée un nouvel utilisateur en vous 
+    inscrivant.
     
     Il est possible de déployé directement le war sur tomcat via votre IDE (configuration différentes selon IDE)
 	
@@ -39,3 +42,4 @@
         url=
         user=
         password=
+
