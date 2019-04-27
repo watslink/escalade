@@ -48,10 +48,8 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-
                 .and()
                 .logout().deleteCookies("JSESSIONID")
-
                 .and()
                 .rememberMe().key("uniqueAndSecret");
     }
