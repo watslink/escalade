@@ -33,7 +33,6 @@ public class InscriptionController {
                                   BindingResult result) {
 
         if (!BCryptManagerUtil.passwordencoder().matches(password_confirmation, utilisateur.getMot_de_passe())) {
-
             return "redirect:/inscription?errorPassword";
         }
         for (Utilisateur user : utilisateurDAO.findAll()) {
@@ -41,9 +40,7 @@ public class InscriptionController {
                 return "redirect:/inscription?errorPseudo";
             }
         }
-
         utilisateurDAO.create(utilisateur);
-
         return "redirect:/login?inscrit";
     }
 }

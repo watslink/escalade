@@ -29,11 +29,10 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
                 "select pseudo, mot_de_passe, enabled from utilisateur where pseudo=?")
                 .authoritiesByUsernameQuery(
                         "select pseudo, role from utilisateur where pseudo=?");
-
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
+    public void configure(WebSecurity web) {
         web
                 .ignoring()
                 .antMatchers("/resources/**", "/webjars/**", "/inscription");

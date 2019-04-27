@@ -25,16 +25,6 @@ public class SiteController {
     @Autowired
     private VilleService villeService;
 
-    @Autowired
-    private TopoService topoService;
-
-    @GetMapping("/liste_secteurs")
-    public String listeSitesParTopo(@RequestParam int site_id, Model model) {
-
-        model.addAttribute("site", siteService.get(site_id));
-        return "presentation/liste_secteurs";
-    }
-
     @PostMapping("/ajouter_site")
     public String addSite(@RequestParam String departement_code,
                           @RequestParam Integer ville_id,

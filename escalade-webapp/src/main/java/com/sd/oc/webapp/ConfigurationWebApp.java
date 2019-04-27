@@ -23,10 +23,6 @@ import javax.servlet.Filter;
 @Import(ConfigurationService.class)
 public class ConfigurationWebApp implements WebMvcConfigurer {
 
-    /**
-     * Configuration du viewResolver
-     * @return resolver
-     */
     @Bean
     public UrlBasedViewResolver viewResolver() {
         UrlBasedViewResolver resolver
@@ -37,21 +33,12 @@ public class ConfigurationWebApp implements WebMvcConfigurer {
         return resolver;
     }
 
-    /**
-     * Configuration des dossier ressources pour la webapp (bootstrap..)
-     * @param registry
-     */
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-
     }
 
-    /**
-     * Configuration du controlleur
-     * @param registry
-     */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("acces/login");

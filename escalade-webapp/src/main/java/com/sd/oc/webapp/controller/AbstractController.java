@@ -17,5 +17,4 @@ public abstract class AbstractController {
     public Utilisateur getUtilisateurConnecte() {
         return utilisateurService.getByPseudo(SecurityContextHolder.getContext().getAuthentication().getName());
     }
-
 }

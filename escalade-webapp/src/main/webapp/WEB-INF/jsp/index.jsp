@@ -17,7 +17,7 @@
     </div>
     <c:if test="${not empty listToposARendre}">
         <h4 class="accueil">
-            Topo à rendre rapidement:
+            Topo(s) à rendre rapidement:
         </h4>
         <table class="table table-condensed">
             <thead>
