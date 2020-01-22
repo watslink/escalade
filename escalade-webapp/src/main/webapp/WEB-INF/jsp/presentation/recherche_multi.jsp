@@ -31,7 +31,7 @@
             </div>
             <div class="form-group  col-xs-12">
                 <label class="col-xs-6 col-md-offset-2 col-md-4 control-label" for="nombre_points">Points
-                    (0-100)</label>
+                    (0-1000)</label>
                 <div>
                     <input id="nombre_points" name="nombre_points" type="text" class=" slider span " value=""
                            data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[0,1000]"/>
